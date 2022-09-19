@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* main */
+
+/* parte esquerda */
+
+main {
+    display: flex;
+    font-size: 18px;
+}
+
+section{
+    width: 50vw;
+    height: 100vh;
+}
+
+.section-form{
+    background-color: #d9d9d9;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    border-radius: 20px;
+    width: 45vw;
+    padding: 15px;
+    box-shadow: 0px 0px 30px #fff;
+}
+
+input {
+    display: block;
+    margin-bottom: 8px;
+}
+
+label{
+    display: block;
+}
+
+#input-nome{
+    width: 75%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input-idade{
+    width: 20%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input-cpf{
+    width: 45%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input-sexo{
+    width: 30%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input-nasc{
+    width: 30%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input-cid{
+    width: 50%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input-rua{
+    width: 50%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input-numero{
+    width: 10%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input-cep{
+    width: 35%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input-telefone{
+    width: 35%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#btn-cadastrar{
+    width: 75%;
+    background-color: #931112;
+    padding: 16px 0px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 8px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 30px 40px 5px 70px;
+    border: none;
+}
+
+/* parte direita */ 
+
+.section-image{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+}
+
+.div-image{
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    height: 75%;
+    align-items: center;
+}
+
+img{
+    width: 250px;
+}
+
+
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+li:not(:last-child){
+    margin-right: 70px;
+}
+
+a{
+    color: #ffffff;
+}

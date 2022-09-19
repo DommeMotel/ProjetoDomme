@@ -8,24 +8,12 @@ header {
     align-items: center;
 }
 
-.container-header{
-    display: flex;
-    align-items: center;
-    margin: auto;
-    width: 60%;
-    justify-content: space-between;
-}
 
 #imagem-header{
     width: 140px;
     height: 140px;
+    justify-content: center;
 }
-
-#btnBuscar img{
-    width: 13px;
-    height: 13px;
-}
-
 
 .titulo-header{
     display: block;
