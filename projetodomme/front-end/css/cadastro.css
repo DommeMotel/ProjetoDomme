@@ -13,12 +13,9 @@ main {
     font-size: 18px;
 }
 
-section{
-    width: 50vw;
-    height: 100vh;
-}
 
 .section-form{
+    width: 50vw;
     background-color: #d9d9d9;
     align-items: center;
     display: flex;
@@ -26,90 +23,63 @@ section{
     height: 100vh;
 }
 
-form{
-    border-radius: 20px;
-    width: 45vw;
-    padding: 15px;
-    box-shadow: 0px 0px 30px #fff;
-}
-
-input {
-    display: block;
-    margin-bottom: 8px;
-}
-
 label{
     display: block;
 }
 
-#input-nome{
-    width: 75%;
+#form-cadastro{
+    border-radius: 20px;
+    width: 45vw;
+    padding: 0px 15px;
+    box-shadow: 0px 0px 30px #fff;
+}
+
+#form-cadastro>input{
+    display: block;
+    margin-bottom: 8px;
     padding: 5px;
     border-radius: 10px;
     border: none;
+}
+
+#input-nome{
+    width: 75%;
 }
 
 #input-idade{
     width: 20%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
 }
 
 #input-cpf{
     width: 45%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
 }
 
 #input-sexo{
     width: 30%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
 }
 
 #input-nasc{
     width: 30%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
 }
 
 #input-cid{
     width: 50%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
 }
 
 #input-rua{
     width: 50%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
 }
 
 #input-numero{
     width: 10%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
 }
 
 #input-cep{
     width: 35%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
 }
 
 #input-telefone{
     width: 35%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
 }
 
 #btn-cadastrar{
@@ -129,6 +99,8 @@ label{
 /* parte direita */ 
 
 .section-image{
+    width: 50vw;
+    height: 100vh;
     background-color: black;
     display: flex;
     justify-content: center;
@@ -144,22 +116,22 @@ label{
     align-items: center;
 }
 
-img{
+.div-image>img{
     width: 250px;
 }
 
 
-ul{
+.links-cadastro>ul{
     display: flex;
     list-style: none;
     justify-content: space-between;
     padding-bottom: 15px;
 }
 
-li:not(:last-child){
+.links-cadastro>li:not(:last-child){
     margin-right: 70px;
 }
 
-a{
+.links-cadastro>a{
     color: #ffffff;
 }

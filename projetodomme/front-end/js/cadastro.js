@@ -1,11 +1,10 @@
+const form = document.querySelector("#form-cadastro")
 const btn = document.getElementById("btn-cadastrar");
 
 const clientes = [];
 
 btn.addEventListener("click", (event) => {
     event.preventDefault();
-
-    const form = document.querySelector("#form")
 
     let cliente = criaCliente(form);
 
