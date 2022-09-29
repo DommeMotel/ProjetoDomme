@@ -1,4 +1,4 @@
-const form = document.querySelector("#form-cadastro")
+const form = document.querySelector("#form-cadastro-quarto")
 const btn = document.getElementById("btn-cadastrar");
 
 const clientes = [];

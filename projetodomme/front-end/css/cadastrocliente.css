@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* main */
+
+/* parte esquerda */
+
+main {
+    display: flex;
+    font-size: 18px;
+}
+
+
+.section-form{
+    width: 50vw;
+    background-color: #d9d9d9;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+label{
+    display: block;
+}
+
+#form-cadastro-cliente{
+    border-radius: 20px;
+    width: 45vw;
+    padding: 0px 15px;
+    box-shadow: 0px 0px 30px #fff;
+}
+
+#form-cadastro-cliente>input{
+    display: block;
+    margin-bottom: 8px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+#input-nome{
+    width: 75%;
+}
+
+#input-idade{
+    width: 20%;
+}
+
+#input-cpf{
+    width: 45%;
+}
+
+#input-sexo{
+    width: 30%;
+}
+
+#input-nasc{
+    width: 30%;
+}
+
+#input-cid{
+    width: 50%;
+}
+
+#input-rua{
+    width: 50%;
+}
+
+#input-numero{
+    width: 10%;
+}
+
+#input-cep{
+    width: 35%;
+}
+
+#input-telefone{
+    width: 35%;
+}
+
+#btn-cadastrar{
+    width: 75%;
+    background-color: #931112;
+    padding: 16px 0px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 8px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 30px 40px 5px 70px;
+    border: none;
+}
+
+/* parte direita */ 
+
+.section-image{
+    width: 50vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    height: 100vh;
+}
+
+.div-image{
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    height: 75%;
+    align-items: center;
+}
+
+.div-image>img{
+    width: 250px;
+}
+
+
+.links-cadastro{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+
+.links-a>a{
+    margin: 0px 20px;
+    color: #ffffff;
+    text-decoration: none;;
+}

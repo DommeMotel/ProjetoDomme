@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* main */
@@ -25,49 +26,36 @@ main {
 
 label{
     display: block;
+    margin-top: 20px;
 }
 
-#form-cadastro{
+#form-cadastro-quarto{
     border-radius: 20px;
     width: 45vw;
     padding: 0px 15px;
     box-shadow: 0px 0px 30px #fff;
 }
 
-#form-cadastro>input{
+#form-cadastro-quarto>input{
     display: block;
     margin-bottom: 8px;
-    padding: 5px;
+    padding: 10px 5px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+}
+
+#tipos-quartos{
+    display: block;
+    margin-bottom: 8px;
+    padding: 10px 5px;
+    outline: none;
     border-radius: 10px;
     border: none;
 }
 
 #input-nome{
     width: 75%;
-}
-
-#input-idade{
-    width: 20%;
-}
-
-#input-cpf{
-    width: 45%;
-}
-
-#input-sexo{
-    width: 30%;
-}
-
-#input-nasc{
-    width: 30%;
-}
-
-#input-cid{
-    width: 50%;
-}
-
-#input-rua{
-    width: 50%;
 }
 
 #input-numero{
@@ -78,9 +66,6 @@ label{
     width: 35%;
 }
 
-#input-telefone{
-    width: 35%;
-}
 
 #btn-cadastrar{
     width: 75%;
@@ -89,10 +74,11 @@ label{
     cursor: pointer;
     color: #ffffff;
     border-radius: 8px;
+    outline: none;
     letter-spacing: 3px;
     font-weight: 800;
     text-transform: uppercase;
-    margin: 30px 40px 5px 70px;
+    margin: 30px 40px 15px 70px;
     border: none;
 }
 
@@ -121,17 +107,16 @@ label{
 }
 
 
-.links-cadastro>ul{
+.links-cadastro{
     display: flex;
     list-style: none;
     justify-content: space-between;
     padding-bottom: 15px;
 }
 
-.links-cadastro>li:not(:last-child){
-    margin-right: 70px;
-}
 
-.links-cadastro>a{
+.links-a>a{
+    margin: 0px 20px;
     color: #ffffff;
+    text-decoration: none;;
 }
