@@ -1,20 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const db = require('../models/db');
 
 
 // método de retorno de todos as reservas
 router.get('/', (req, res) => {
-    res.status(200).send({
-        mensagem: 'Usando o Get da rota de reservas'
+    const cmd_sql = 'SELECT * FROM tblreserva'
+    db.query(cmd_sql, (err, rows) => {
+        res.status(200).send(rows);
     });
 });
 
 
 // método de adicionar reservas
 router.post('/', (req, res) => {
-    res.status(201).send({
-        mensagem: 'Usando o Post da rota de reservas'
-    });
+    
 });
 
 
