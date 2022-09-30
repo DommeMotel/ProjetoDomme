@@ -15,10 +15,10 @@ router.get('/', (req, res) => {
 
 
 // método de busca de cliente específico
-router.get('/:cliente', (req, res) => {
-    const cliente = req.params.cliente;
-    const cmd_sql = 'SELECT * FROM tblcliente WHERE nmCliente = ?'
-    db.query(cmd_sql, cliente, (err, rows) => {
+router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    const cmd_sql = 'SELECT * FROM tblcliente WHERE codigo_cliente = ?'
+    db.query(cmd_sql, id, (err, rows) => {
         if(err){
             res.status(400).send({
                 mensagem: err
