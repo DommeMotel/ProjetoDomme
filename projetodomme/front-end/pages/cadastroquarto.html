@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/cadastroquarto.css">
-    <title>Cadastro de quarto</title>
+    <title>Domme Motel - Cadastro Suíte</title>
 </head>
+
 <body>
+    <header>
+        <img id="imagem-header" src="../img/logo.png">
+        
+        <nav class="navegacao">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="cadastrocliente.html">Cadastro de Cliente</a></li>
+                <li><a href="cadastroquarto.html">Cadastro de Suíte</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main>
+        
         <section class="section-form">
             <form id="form-cadastro-quarto">
                     <label >Nome quarto</label>
@@ -16,31 +34,32 @@
 
                     <label>Nº</label>
                     <input type="text" name="enderecoNr" id="input-numero" placeholder="Nº" required>
-
-                    <label >Descrição</label>
-                    <input type="text" name="cep" id="input-cep" placeholder="Descrição" required>
                     
-                    <label>Tipo quarto</label>
+                    <label>Categoria</label>
                     <select name="select" id="tipos-quartos">
-                        <option value="simples">simples</option>
-                        <option value="medio">Médio</option>
-                        <option value="master">Master</option>
+                        <option value="simples">Standard</option>
+                        <option value="medio">Hidro</option>
+                        <option value="master">Super Luxo</option>
                       </select>
 
                     <button id="btn-cadastrar" type="submit">Cadastrar Quarto</button>
             </form>
-        </section>
-
-        <section class="section-image">
-            <div class="div-image">
-                <img src="../img/logo.png">
-                <ul class="links-cadastro">
-                    <li class="links-a"><a href="./home.html">Home</a></li>
-                    <li class="links-a"><a href="./login.html">Voltar</a></li>
-                </ul>
-            </div>
-        </section>
+        </section>  
+       
     </main>
-    <script src="../js/cadastroquarto.js"></script>
+
+    <footer>
+        <div class="container-footer">
+            <div class="logo-nome">
+                <img src="../img/logo.png">
+                <span>Domme Motel &copy;</span>
+            </div>
+            <span><a href="#">Localização</a></span>
+            <span>Fale conosco: (xx) xxxxx-xxxx</span>
+        </div>
+    </footer>
+
+    <script src="../js/carrosel.js"></script>
 </body>
+
 </html>

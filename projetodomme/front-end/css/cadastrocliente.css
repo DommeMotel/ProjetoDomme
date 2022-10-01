@@ -17,11 +17,10 @@ main {
 
 .section-form{
     width: 50vw;
-    background-color: #d9d9d9;
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
 }
 
 label{
@@ -29,10 +28,8 @@ label{
 }
 
 #form-cadastro-cliente{
-    border-radius: 20px;
     width: 45vw;
-    padding: 0px 15px;
-    box-shadow: 0px 0px 30px #fff;
+    padding: 20px 30px;
 }
 
 #form-cadastro-cliente>input{
@@ -40,7 +37,7 @@ label{
     margin-bottom: 8px;
     padding: 5px;
     border-radius: 10px;
-    border: none;
+    border: 1px black solid;
 }
 
 #input-nome{

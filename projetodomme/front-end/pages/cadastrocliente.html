@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/cadastrocliente.css">
-    <title>Cadastre-se!</title>
+    <title>Domme Motel - Cadastro Cliente</title>
 </head>
+
 <body>
+    <header>
+        <img id="imagem-header" src="../img/logo.png">
+        
+        <nav class="navegacao">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="cadastrocliente.html">Cadastro de Cliente</a></li>
+                <li><a href="cadastroquarto.html">Cadastro de Suíte</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main>
+        
         <section class="section-form">
             <form id="form-cadastro-cliente">
                     <label >Nome completo</label>
@@ -44,17 +62,21 @@
                     <button type="submit" id="btn-cadastrar">Cadastrar</button>
             </form>
         </section>
-
-        <section class="section-image">
-            <div class="div-image">
-                <img src="../img/logo.png">
-                <ul class="links-cadastro">
-                    <li class="links-a"><a href="./home.html">Home</a></li>
-                    <li class="links-a"><a href="./login.html">Voltar</a></li>
-                </ul>
-            </div>
-        </section>
+       
     </main>
-    <script src="../js/cadastrocliente.js"></script>
+
+    <footer>
+        <div class="container-footer">
+            <div class="logo-nome">
+                <img src="../img/logo.png">
+                <span>Domme Motel &copy;</span>
+            </div>
+            <span><a href="#">Localização</a></span>
+            <span>Fale conosco: (xx) xxxxx-xxxx</span>
+        </div>
+    </footer>
+
+    <script src="../js/carrosel.js"></script>
 </body>
+
 </html>

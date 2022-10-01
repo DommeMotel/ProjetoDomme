@@ -11,6 +11,7 @@ header {
     flex-direction: column;
     background-color: black;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -18,10 +19,12 @@ header {
     width: 140px;
     height: 140px;
     justify-content: center;
+    align-items: center;
 }
 
 .navegacao ul{
     display: flex;
+
 }
 
 .navegacao li {
@@ -36,12 +39,18 @@ header {
 
 /* main */
 main {
-    background-image: url('../img/fundo2.jpeg');
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center center;
     width: 100%;
     padding: 20px 0;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+
+}
+
+#home{
+    background-color: black;
 }
 
 .titulo-suite{
@@ -50,127 +59,11 @@ main {
     margin: 20px auto;
 }
 
-.carrosel{
-    margin: 0 auto;
-    width: 1100px;
-    height: 550px;
-    overflow: hidden;
-}
-
 .suites{
     width: 400%;
     height: 550px;
     display: flex;
 }
-
-.suites input{
-    display: none;
-}
-
-.suite{
-    width: 25%;
-    position: relative;
-    transition: 1s;
-}
-
-.suites img {
-    width: 1100px;
-    height: 550px;
-}
-
-.navegacao-manual{
-    position: absolute;
-    width: 1100px;
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-}
-
-.manual-btn{
-    border: 2px solid #fff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.manual-btn:not(:last-child){
-    margin-right: 40px;
-}
-
-.manual-btn:hover{
-    background-color: #fff;
-}
-
-#radio1:checked ~ .first{
-    margin-left: 0%;
-}
-
-#radio2:checked ~ .first{
-    margin-left: -25%;
-}
-
-
-#radio3:checked ~ .first{
-    margin-left: -50%;
-}
-
-#radio4:checked ~ .first{
-    margin-left: -75%;
-}
-
-.navegacao-auto div{
-    border: 2px solid #20a6ff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.navegacao-auto{
-    position: absolute;
-    width: 1100px;
-    margin-top: 510px;
-    display: flex;
-    justify-content: center;
-}
-
-.navegacao-auto div:not(:last-child){
-    margin-right: 40px;
-}
-
-#radio1:checked ~.navegacao-auto .auto-btn1{
-    background-color: #fff;
-}
-
-#radio2:checked ~.navegacao-auto .auto-btn2{
-    background-color: #fff;
-}
-
-#radio3:checked ~.navegacao-auto .auto-btn3{
-    background-color: #fff;
-}
-
-#radio4:checked ~.navegacao-auto .auto-btn4{
-    background-color: #fff;
-}
-
-.container-sobre{
-    width: 80%;
-    margin: 100px auto;
-}
-
-.container-sobre h2{
-    font-size: 35px;
-    text-align: center;
-    margin: 30px auto;
-}
-
-.container-sobre p{
-    font-size: 20px;
-}
-
-/* footer */ 
 
 footer{
     width: 100%;
