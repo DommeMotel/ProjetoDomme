@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// get para suíte específica
+// get para suíte específica por codigo
 router.get('/:id', (req, res) => {
     let idQuarto = req.params.id;
     const cmd_sql = 'SELECT * FROM tblquarto WHERE codigo_quarto = ?';
@@ -28,7 +28,23 @@ router.get('/:id', (req, res) => {
         } else {
             res.status(200).json(rows);
         };
-    })
+    });
+});
+
+
+// filtrando suite por status
+router.get('/status/:status', (req, res) => {
+    let status = req.params.status;
+    const cmd_sql = "SELECT * FROM tblquarto WHERE codigo_status = ?";
+    db.query(cmd_sql, status, (err, rows) => {
+        if(err){
+            res.status(400).send({
+                mensagem: 'Suite não encontrada'
+            });
+        } else {
+            res.status(200).send(rows)
+        };
+    });
 });
 
 
@@ -55,7 +71,7 @@ router.put('/:id', (req, res) => {
     let id = req.params.id;
     let dados = req.body;
     const cmd_sql = 'UPDATE tblquarto SET tituloQuarto = ?, nrQuarto = ?, andarQ = ?, tpQuarto = ?, dsQuarto = ?, codigo_status = ? WHERE codigo_quarto = ?';
-    let dados_body = [dados.titulo, dados.numero, dados.andar, dados.tipo, dados.descricao, dados.codigoStatus, id]
+    let dados_body = [dados.titulo, dados.numero, dados.andar, dados.tipo, dados.descricao, dados.codigoStatus, id];
     db.query(cmd_sql, dados_body, (err, rows) => {
         if(err){
             res.status(400).send(err)

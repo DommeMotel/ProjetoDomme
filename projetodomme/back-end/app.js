@@ -1,12 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
-const db = require('./models/db');
+
 
 const rotaClientes = require('./routes/clientes');
 const rotaSuites = require('./routes/suites');
 const rotaReservas = require('./routes/reservas');
 
+app.use(cors());
 app.use(bodyParser.urlencoded( {extended: false}));
 app.use(bodyParser.json());
 
