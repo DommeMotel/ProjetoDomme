@@ -15,14 +15,18 @@ router.get('/', (req, res) => {
 
 
 // método de busca de cliente específico
-router.get('/:id', (req, res) => {
-    const id = req.params.id;
-    const cmd_sql = 'SELECT * FROM tblcliente WHERE codigo_cliente = ?'
-    db.query(cmd_sql, id, (err, rows) => {
+router.get('/:cpf', (req, res) => {
+    const cpf = req.params.cpf;
+    const cmd_sql = 'SELECT * FROM tblcliente WHERE CPF = ?'
+    db.query(cmd_sql, cpf, (err, rows) => {
         if(err){
             res.status(400).send({
                 mensagem: err
             });
+        } else if(rows.length === 0){
+            res.status(400).send({
+                mensagem: 'Não encontrado'
+            })
         } else {
             res.status(200).json(rows)
         };

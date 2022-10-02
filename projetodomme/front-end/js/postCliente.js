@@ -1,5 +1,7 @@
-const btnCadastrar = document.querySelector('#btn-cadastrar');
-const form = document.querySelector('#form-cadastro-cliente')
+const btnCadastrar = document.querySelector('#btn-cadastro');
+const form = document.querySelector('#form-cadastro-cliente');
+const btnCancelar = document.querySelector('#btn-cancelar');
+
 
 
 btnCadastrar.addEventListener('click', (event)=>{
@@ -13,6 +15,12 @@ btnCadastrar.addEventListener('click', (event)=>{
 
     form.reset();
 });
+
+btnCancelar.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    form.reset();
+})
 
 
 function getDadosForm(form){
