@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* main */
+
+/* parte esquerda */
+
+main {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+section{
+    border: 1px rgb(201, 201, 201) solid;
+    margin: 10px;
+    width: 30%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+
+p{
+    font-size: 25px;
+    margin: 8px;
+    font-weight: bold;
+}
+
+form{
+    margin: 10px;
+}
+
+.form>input{
+    display: block;
+    margin-bottom: 8px;
+    margin-left: 90px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px #a8a8a8 solid;
+}
+.form>label{
+    float: left;
+    margin: 5px;
+
+}
+
+#pagamento>input{
+    margin: 15px 10px 0px 10px;
+    border: 1px #a8a8a8 solid;
+}
+
+
+#input-suite{
+    width: 75%;
+}
+
+#input-categoria{
+    width: 69%;
+}
+
+#input-entrada, #input-saida, #input-qtdpessoas{
+    width: 15%;
+}
+
+#input-permanencia, #input-consumo, #input-adiantamento{
+    width: 20%;
+}
+
+#btn-pag{
+    width: 30%;
+    background-color: #931112;
+    padding: 10px 0px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 8px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 10px 10px 1px 70px;
+    border: none;
+    
+}

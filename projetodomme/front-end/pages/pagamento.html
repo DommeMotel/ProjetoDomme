@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/pagamento.css">
+    <title>Domme Motel - Pagamento
+    </title>
+</head>
+
+<body>
+    <header>
+        <img id="imagem-header" src="../img/logo.png">
+        
+        <nav class="navegacao">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="cadastrocliente.html">Cadastro de Cliente</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="cadastroquarto.html">Cadastro de Suíte</a></li>
+                <li><a href="quartos.html">Suítes</a></li>
+                <li><a href="pagamento.html">Pagamento</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+
+    <section id="details" class="ns">
+        <p>Detalhes da Conta</p>
+        <hr>
+        <form class="form">
+            <label>Suíte:</label>
+                <input type="text" name="suite" id="input-suite" required> 
+            <label>Categoria:</label>
+                <input type="text" name="categoria" id="input-categoria" required> 
+            <label>Entrada:</label>
+                <input type="text" name="entrada" id="input-entrada" required> 
+            <label>Saída:</label>
+                <input type="text" name="saida" id="input-saida" required> 
+            <label>Permanência:</label>
+                <input type="text" name="permanencia" id="input-permanencia" required> 
+            <label>Qtde. de pessoas:</label>
+                <input type="text" name="qtdpessoas" id="input-qtdpessoas" required> 
+        </form>
+
+    </section>
+    <section id="consumo" class="ns">
+        <p>Consumo</p>
+        <hr>
+        <form class="form">
+            <label>Consumo:</label>
+            <input type="text" name="consumo" id="input-consumo" required> 
+            <label>Adiantamento:</label>
+            <input type="text" name="adiantamento" id="input-adiantamento" required> 
+            Total:<br>
+        </form>
+    </section>
+    <section id="pag">
+        <p>Pagamento:</p>
+        <hr>
+        <form id="pagamento">
+            <label>Formas de Pagamento:</label>  <br>
+                <input type="radio" name="pagamento" value="pix">PIX  <br>
+                <input type="radio" name="pagamento" value="dinheiro">Dinheiro  <br>
+                <input type="radio" name="pagamento" value="debito">Débito  <br>
+                <input type="radio" name="pagamento" value="credito">Crédito  <br>
+                <div>
+                    <button type="submit" id="btn-pag">Confirmar</button>
+                    <button type="reset" id="btn-pag">Cancelar</button>
+                </div>
+        </form>
+    </section>
+
+
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <div class="logo-nome">
+                <img src="../img/logo.png">
+                <span>Domme Motel &copy;</span>
+            </div>
+            <span><a href="#">Localização</a></span>
+            <span>Fale conosco: (xx) xxxxx-xxxx</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

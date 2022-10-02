@@ -33,7 +33,7 @@ label{
 }
 
 #form-cadastro-cliente>input{
-    display: block;
+
     margin-bottom: 8px;
     padding: 5px;
     border-radius: 10px;
@@ -80,8 +80,8 @@ label{
     width: 35%;
 }
 
-#btn-cadastrar{
-    width: 75%;
+#btn-cadastro{
+    width: 35%;
     background-color: #931112;
     padding: 16px 0px;
     cursor: pointer;

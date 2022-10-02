@@ -64,18 +64,17 @@ label{
 }
 
 
-#btn-cadastrar{
-    width: 75%;
+#btn-cadastro{
+    width: 35%;
     background-color: #931112;
     padding: 16px 0px;
     cursor: pointer;
     color: #ffffff;
     border-radius: 8px;
-    outline: none;
     letter-spacing: 3px;
     font-weight: 800;
     text-transform: uppercase;
-    margin: 30px 40px 15px 70px;
+    margin: 30px 40px 5px 70px;
     border: none;
 }
 
