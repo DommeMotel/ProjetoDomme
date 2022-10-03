@@ -69,7 +69,7 @@ async function sendAPI(cliente){
 
         if(res.status === 200){
             alert('Cliente cadastrado');
-            window.location.href = "home.html"
+            window.location.href = "clientes.html"
         } else { 
             alert('Ops! Houve um erro');
         };

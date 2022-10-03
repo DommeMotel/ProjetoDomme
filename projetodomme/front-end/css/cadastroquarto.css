@@ -64,8 +64,8 @@ label{
 }
 
 
-#btn-cadastro{
-    width: 35%;
+#btn-cadastro, #btn-cancelar{
+    width: 11vw;
     background-color: #931112;
     padding: 16px 0px;
     cursor: pointer;

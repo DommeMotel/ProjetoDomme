@@ -25,6 +25,10 @@ router.get('/:id', (req, res) => {
             res.status(400).send({
                 mensagem: 'não encontrado'
             });
+        } else if(rows.length === 0) {
+            res.status(400).send({
+                mensagem: 'Não encontrado'
+            });
         } else {
             res.status(200).json(rows);
         };
@@ -49,10 +53,10 @@ router.get('/status/:status', (req, res) => {
 
 
 // método de adicionar suítes
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     let dados = req.body;
-    const cmd_sql = 'INSERT INTO tblquarto (tituloQuarto, nrQuarto, andarQ, tpQuarto, dsQuarto, codigo_status) VALUES (?, ?, ?, ?, ?, ?)';
-    let dados_body = [dados.titulo, dados.numero, dados.andar, dados.tipo, dados.descricao, dados.codigoStatus];
+    const cmd_sql = 'INSERT INTO tblquarto (tituloQuarto, nrQuarto, tpQuarto, codigo_status) VALUES (?, ?, ?, ?)';
+    let dados_body = [dados.titulo, dados.numero, dados.tipo, dados.codigo];
     db.query(cmd_sql, dados_body, (err, rows) => {
         if(err){
             res.status(400).send(err);
