@@ -7,7 +7,7 @@ const router = express.Router();
 
 // método de retorno de todos os clientes
 router.get('/', (req, res) => {
-    const cmd_sql = 'SELECT * FROM tblcliente';
+    const cmd_sql = 'select codigo_cliente, nmCliente, CPF, date_format(dtNascimento,"%d/%m/%y") as "dtNascimento",  sexo, cep, nmRua, nrEndereco, nmCidade,nrTelefone from tblCliente';
     db.query(cmd_sql, (err, rows) => {
         res.status(200).send(rows);
     });
@@ -38,7 +38,7 @@ router.get('/:cpf', (req, res) => {
 router.post('/', async (req, res) => {
     let dados = req.body;
     let dados_body = [dados.nome, dados.idade, dados.cpf, dados.sexo, dados.dtNasc, dados.cidade, dados.rua,dados.numero, dados.cep, dados.telefone]
-    const cmd_sql = 'INSERT INTO tblcliente (nmCliente, idade, CPF, sexo, dtNascimento, nmCidade, nmRua, nrEndereco, cep, nrTelefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+    const cmd_sql = 'INSERT INTO tblcliente (nmCliente, CPF, sexo, dtNascimento, nmCidade, nmRua, nrEndereco, cep, nrTelefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     db.query(cmd_sql, dados_body,(err, rows) => {
         if(err){
             res.status(400).send({
@@ -57,7 +57,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', (req, res) => {
     let dados = req.body;
     let id = req.params.id;
-    const cmd_sql = 'UPDATE tblcliente SET nmCliente =?, CPF = ?, idade = ?, sexo = ?, nmRua = ?, nmCidade =?, nrEndereco = ?, cep =?, nrTelefone = ? WHERE codigo_cliente = ?';
+    const cmd_sql = 'UPDATE tblcliente SET nmCliente =?, CPF = ?, sexo = ?, nmRua = ?, nmCidade =?, nrEndereco = ?, cep =?, nrTelefone = ? WHERE codigo_cliente = ?';
     let dados_body = [dados.nome, dados.cpf, dados.idade, dados.sexo, dados.rua, dados.cidade, dados.endereco, dados.cep, dados.telefone, id]
     db.query(cmd_sql, dados_body, (err, rows) =>{
         if(err){

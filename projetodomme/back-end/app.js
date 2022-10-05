@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const rotaClientes = require('./routes/clientes');
 const rotaSuites = require('./routes/suites');
 const rotaReservas = require('./routes/reservas');
+const rotaLogin = require('./routes/login');
 
 app.use(cors());
 app.use(bodyParser.urlencoded( {extended: false}));
@@ -25,8 +26,9 @@ app.use((req, res, next) => {
 });
 
 app.use('/clientes', rotaClientes);
-app.use('/suites', rotaSuites)
-app.use('/reservas', rotaReservas)
+app.use('/suites', rotaSuites);
+app.use('/reservas', rotaReservas);
+app.use('/login', rotaLogin);
 
 app.use((req, res, next) => {
     const erro = new Error('Não encontrado')
