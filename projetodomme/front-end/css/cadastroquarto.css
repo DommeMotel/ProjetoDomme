@@ -63,8 +63,25 @@ label{
     width: 35%;
 }
 
+.botoes-quarto{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
 
-#btn-cadastro, #btn-cancelar{
+#btn-cadastro{
+    width: 45%;
+    background-color: #931112;
+    padding: 16px 0px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 8px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+}
+#btn-cancelar{
     width: 11vw;
     background-color: #931112;
     padding: 16px 0px;
@@ -74,7 +91,6 @@ label{
     letter-spacing: 3px;
     font-weight: 800;
     text-transform: uppercase;
-    margin: 30px 40px 5px 70px;
     border: none;
 }
 

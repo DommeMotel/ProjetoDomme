@@ -11,7 +11,7 @@ btnCadastrar.addEventListener('click', (event)=>{
     
     const cliente = getDadosForm(form);
 
-    sendAPI(cliente);
+    validaCliente(cliente.dtNasc, cliente);
 
     form.reset();
 });
@@ -25,7 +25,6 @@ btnCancelar.addEventListener('click', (event) => {
 
 function getDadosForm(form){
     const inputNome = form.nome;
-    const inputIdade = form.idade;
     const inputCpf = form.cpf;
     const inputSexo = form.sexo;
     const inputDtNasc = form.dtNasc;
@@ -35,25 +34,20 @@ function getDadosForm(form){
     const inputCep = form.cep;
     const inputTelefone = form.telefone;
 
-
-    if(inputIdade.value < 18){
-        alert("Usuário menor de idade");
-    } else {
-        const cliente = {
-            nome: inputNome.value,
-            idade: inputIdade.value,
-            cpf: inputCpf.value,
-            sexo: inputSexo.value,
-            dtNasc: inputDtNasc.value,
-            cidade: inputCidade.value,
-            rua: inputRua.value,
-            numero: inputNr.value,
-            cep: inputCep.value,
-            telefone: inputTelefone.value
-        };
-    
-        return cliente;
+    const cliente = {
+        nome: inputNome.value,
+        cpf: inputCpf.value,
+        sexo: inputSexo.value,
+        dtNasc: inputDtNasc.value,
+        cidade: inputCidade.value,
+        rua: inputRua.value,
+        numero: inputNr.value,
+        cep: inputCep.value,
+        telefone: inputTelefone.value
     };
+
+    return cliente;
+    
 };
 
 async function sendAPI(cliente){
@@ -79,18 +73,20 @@ async function sendAPI(cliente){
 };
 
 
+function validaCliente(data, cliente){
+    let atualDate = new Date();
+
+    let nascDate = new Date(data);
 
 
-
-const validacoes = (cliente) => {
-    if(typeof(cliente.nome) != typeof('a')){
-        alert("Não cadastrado");
-    }
+    let idade = atualDate.getFullYear() - nascDate.getFullYear();
     
-    else if (typeof(cliente.idade) != typeof(1)){
-        alert("Não cadastrado");
+    if(idade < 18){
+
+        alert('Cliente menor que 18 anos');
+
+    } else {
+
+        sendAPI(cliente);
     }
- 
-    //tem que continuar com as validações
-    
-};
+}

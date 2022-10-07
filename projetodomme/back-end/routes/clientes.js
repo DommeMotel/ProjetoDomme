@@ -37,8 +37,8 @@ router.get('/:cpf', (req, res) => {
 // método de adicionar clientes
 router.post('/', async (req, res) => {
     let dados = req.body;
-    let dados_body = [dados.nome, dados.idade, dados.cpf, dados.sexo, dados.dtNasc, dados.cidade, dados.rua,dados.numero, dados.cep, dados.telefone]
-    const cmd_sql = 'INSERT INTO tblcliente (nmCliente, CPF, sexo, dtNascimento, nmCidade, nmRua, nrEndereco, cep, nrTelefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+    let dados_body = [dados.nome, dados.cpf, dados.sexo, dados.dtNasc, dados.cidade, dados.rua, dados.numero, dados.cep, dados.telefone]
+    const cmd_sql = 'INSERT INTO tblcliente (nmCliente, CPF, sexo, dtNascimento, nmCidade, nmRua, nrEndereco, cep, nrTelefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
     db.query(cmd_sql, dados_body,(err, rows) => {
         if(err){
             res.status(400).send({

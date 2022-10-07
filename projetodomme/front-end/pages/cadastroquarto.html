@@ -36,7 +36,7 @@
                     <input type="text" name="nome" id="input-nome" placeholder="Nome quarto" required>
 
                     <label>Nº</label>
-                    <input type="text" name="enderecoNr" id="input-numero" placeholder="Nº" required>
+                    <input type="text" name="numeroQuarto" id="input-numero" placeholder="Nº" required>
                     
                     <label>Categoria</label>
                     <select name="select" id="tipos-quartos">
@@ -44,9 +44,11 @@
                         <option value="Hidro">Hidro</option>
                         <option value="Super Luxo">Super Luxo</option>
                       </select>
+                    <label>Valor da hora</label>
+                    <input type="text" name="valorHora" id="input-numero" placeholder="Valor" required>
 
-                    <div>
-                        <button type="submit" id="btn-cadastro">Cadastrar</button>
+                    <div class="botoes-quarto">
+                        <button type="submit" id="btn-cadastro">Cadastrar Quarto</button>
                         <button type="reset" id="btn-cancelar">Cancelar</button>
                     </div>
             </form>

@@ -55,8 +55,8 @@ router.get('/status/:status', (req, res) => {
 // método de adicionar suítes
 router.post('/', async (req, res) => {
     let dados = req.body;
-    const cmd_sql = 'INSERT INTO tblquarto (tituloQuarto, nrQuarto, tpQuarto, codigo_status) VALUES (?, ?, ?, ?)';
-    let dados_body = [dados.titulo, dados.numero, dados.tipo, dados.codigo];
+    const cmd_sql = 'INSERT INTO tblquarto (tituloQuarto, nrQuarto, tpQuarto, vlHoraQ, codigo_status) VALUES (?, ?, ?, ?, ?)';
+    let dados_body = [dados.tituloQuarto, dados.nrQuarto, dados.tpQuarto, dados.vlHoraQ, dados.codigo_status];
     db.query(cmd_sql, dados_body, (err, rows) => {
         if(err){
             res.status(400).send(err);
