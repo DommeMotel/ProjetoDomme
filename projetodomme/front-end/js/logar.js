@@ -39,10 +39,9 @@ async function sendAPI(login){
         });
 
         if(res.status === 200){
-            alert('Login cadastrado');
             window.location.href = "home.html"
         } else { 
-            alert('Usuário não existe');
+            alert('Usuario ou senha errados');
         };
     } catch(erro){
         console.log(erro);
