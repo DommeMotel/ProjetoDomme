@@ -46,7 +46,7 @@ router.get('/status/:status', (req, res) => {
                 mensagem: 'Suite não encontrada'
             });
         } else {
-            res.status(200).send(rows)
+            res.status(200).json(rows)
         };
     });
 });
