@@ -23,12 +23,24 @@ header {
     border: black solid 1px;
     padding: 5px;
     text-align: center;
+    
 }
 
 
 .input{
     margin: 10px;
     border: black solid 1px;
+}
+
+.quarto{
+    margin: 20px 0;
+    border: solid black 1px;
+    padding: 5px;
+    background-color: silver;
+}
+
+.quarto>input{
+    width: 150px;
 }
 
 

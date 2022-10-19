@@ -53,27 +53,32 @@ function html(listaSuites){
     tabela.textContent = "";
 
     listaSuites.forEach(suite => {
+
+
         
-        let html = `<div class="quarto">
+        let html = `
+            <div class="quarto">
             <label for="nome">Nome do Quarto: </label>
-            <input name="nome" class="input" id="inputNome" value="${suite.tituloQuarto}" readonly>
+            <input name="nome" value="${suite.tituloQuarto}" readonly>
         
             <label for="codigo">Código: </label>
-            <input name="codigo" class="input" id="inputCodigo" value="${suite.codigo_quarto}" readonly>
+            <input name="codigo" value="${suite.codigo_quarto}" readonly>
         
             <label for="numero">Número: </label>
-            <input name="numero" class="input" id="inputNumero" value="${suite.nrQuarto}" readonly>
+            <input name="numero" value="${suite.nrQuarto}" readonly>
         
             <label for="categoria">Categoria: </label>
-            <input name="categoria" class="input" id="inputCategoria" value="${suite.tpQuarto}" readonly>
+            <input name="categoria" value="${suite.tpQuarto}" readonly>
         
             <label for="valor">Valor: </label>
-            <input name="valor" class="input" id="inputValor" value="${suite.vlHoraQ}" readonly>
+            <input name="valor" value="${suite.vlHoraQ}" readonly>
         
             <label for="status">Status: </label>
-            <input name="status" class="input" id="inputStatus" value="${suite.codigo_status}" readonly>
-        </div>`
+            <input name="status" value="${suite.codigo_status}" readonly>
+            </div>
+        `
 
         tabela.innerHTML += html;
     });
 }
+
