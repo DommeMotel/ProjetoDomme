@@ -54,8 +54,6 @@ function html(listaSuites){
 
     listaSuites.forEach(suite => {
 
-
-        
         let html = `
             <div class="quarto">
             <label for="nome">Nome do Quarto: </label>
@@ -74,11 +72,19 @@ function html(listaSuites){
             <input name="valor" value="${suite.vlHoraQ}" readonly>
         
             <label for="status">Status: </label>
-            <input name="status" value="${suite.codigo_status}" readonly>
+            <input name="status"  value="${suite.codigo_status}" readonly>
+            
+            <!--<button type="submit" id="alterar" >Alterar</button>-->
             </div>
         `
-
         tabela.innerHTML += html;
     });
 }
+
+// function exibeCor(suite){
+//     if(suite.codigo_status.value === 1){
+
+//     }
+// }
+
 
