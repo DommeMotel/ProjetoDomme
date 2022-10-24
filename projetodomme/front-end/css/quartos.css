@@ -55,25 +55,25 @@ main {
 
 form{
     width: 30%;
-    height: 8%;
     display: flex;
 }
 
 #pesq{
-    display: block;
     margin: 10px;
-    padding: 5px;
-    border-radius: 10px;
-    border: 1px #a8a8a8 solid;
     width: 70%;
     font-size: 12pt;
+    padding: 10px 5px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px black solid;
+    text-align: center;
 
 }
 
 #btn{
-    width: 10vw;
+    width: 40%;
     background-color: #931112;
-    padding: 8px 10px;
+    padding: 10px 5px;
     cursor: pointer;
     color: #ffffff;
     border-radius: 8px;

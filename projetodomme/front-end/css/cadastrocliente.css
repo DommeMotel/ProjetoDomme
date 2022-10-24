@@ -1,26 +1,67 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* main */
-
-/* parte esquerda */
-
-main {
+header {
+    width: 100%;
+    height: 200px;
     display: flex;
-    font-size: 18px;
+    flex-direction: column;
+    background-color: #212121;
+    align-items: center;
+    justify-content: center;
 }
 
 
+#imagem-header{
+    width: 140px;
+    height: 140px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navegacao ul{
+    display: flex;
+
+}
+
+.navegacao li {
+    margin: 10px 25px;
+    font-size: 20px;
+}
+
+.navegacao a{
+    color: white;
+    text-decoration: none;
+}
+
+/* main */
+main {
+    width: 100%;
+    padding: 20px 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #e6e6e6;
+
+}
+
 .section-form{
+    /* width: 50vw; */
+    /* align-items: center; */
+    /* display: flex; */
+    /* justify-content: center; */
+    height: 100%;
     width: 50vw;
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 100%;
+    background-color: #212121;
+    border-radius: 10px;
+    color: #e6e6e6;
+    padding: 20px 30px;
 }
 
 label{
@@ -34,30 +75,34 @@ label{
 
 #form-cadastro-cliente>input{
 
+    /* margin-bottom: 8px; */
+    /* padding: 5px; */
+    /* border-radius: 10px; */
+    /* border: 1px black solid; */
+
     margin-bottom: 8px;
-    padding: 5px;
+    padding: 10px 5px;
+    outline: none;
     border-radius: 10px;
     border: 1px black solid;
+    text-align: center;
 }
 
 #input-nome{
     width: 75%;
 }
 
-#input-idade{
-    width: 20%;
-}
 
 #input-cpf{
-    width: 45%;
+    width: 35%;
 }
 
 #input-sexo{
-    width: 30%;
+    width: 15%;
 }
 
 #input-nasc{
-    width: 30%;
+    width: 35%;
 }
 
 #input-cid{
@@ -69,7 +114,7 @@ label{
 }
 
 #input-numero{
-    width: 10%;
+    width: 15%;
 }
 
 #input-cep{
@@ -80,7 +125,25 @@ label{
     width: 35%;
 }
 
-#btn-cadastro, #btn-cancelar{
+#botoes-cliente{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.btn-cadastro{
+    width: 45%;
+    background-color: #931112;
+    padding: 16px 0px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 8px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+}
+.btn-cancelar{
     width: 11vw;
     background-color: #931112;
     padding: 16px 0px;
@@ -90,11 +153,9 @@ label{
     letter-spacing: 3px;
     font-weight: 800;
     text-transform: uppercase;
-    margin: 30px 40px 5px 70px;
     border: none;
 }
 
-/* parte direita */ 
 
 .section-image{
     width: 50vw;
@@ -131,4 +192,41 @@ label{
     margin: 0px 20px;
     color: #ffffff;
     text-decoration: none;;
+}
+
+/* Footer */
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+}
+
+.container-footer img{
+    width: 70px;
+    height: 70px;
+}
+
+.container-footer span{
+    color: #e6e6e6;
+}
+
+.container-footer{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+}
+
+.logo-nome{
+    display: flex;
+    align-items: center;
+}
+
+.container-footer a{
+    text-decoration: none;
+    color: #fff;
 }
