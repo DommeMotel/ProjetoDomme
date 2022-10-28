@@ -5,7 +5,6 @@ const put = document.querySelector('#btnAlt-dialog')
 const popup = document.querySelector('dialog');
 const formularioBusca = document.querySelector('#popup-form');
 
-
 btnAlt.onclick = () =>{
     popup.showModal();
 };
@@ -24,8 +23,8 @@ inputId.addEventListener("blur", (e)=>{
 put.addEventListener('click', (e)=>{
     e.preventDefault();
 
-    const quarto = dados(formularioBusca);
-    putQuarto(quarto);
+    // const quarto = dados(formularioBusca);
+    uptadeSuite();
 
 });
 
@@ -55,10 +54,10 @@ function dados(form){
     const valor = form.newPrice.value
 
     const quarto = {
-        tituloQuarto: titulo,
-        nrQuarto: numero,
-        tpQuarto: tipo,
-        vlHoraQ: parseFloat(valor)
+        titulo: titulo,
+        numero: numero,
+        tipo: tipo,
+        valor: parseFloat(valor)
     }
 
 
@@ -83,3 +82,25 @@ async function putQuarto(quarto){
             alert('Ops! Houve um erro');
         };
 };
+
+
+// const quarto = {
+//     titulo: "titulo",
+//     numero: 20,
+//     tipo: "Standard",
+//     valor: 230.00
+// }
+
+function uptadeSuite(){
+    const id = inputId.value;
+    axios.put(`http://localhost:8000/suites/${id}`, dados(formularioBusca))
+    .then(response =>  {
+        alert(JSON.stringify(response.data));
+        window.location.href = "quartos.html"
+    })
+    .catch(error => console.log(error));
+}
+
+
+
+// uptadeSuite();

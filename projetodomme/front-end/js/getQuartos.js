@@ -30,10 +30,10 @@ async function getQuarto(){
 
     let idSuite = input.value;
     const res = await fetch(`http://localhost:8000/suites/${idSuite}`);
-
+    const suite = await res.json();
+    
     if(res.status === 200){
 
-        const suite = await res.json();
         html(suite);
     } else {
 
