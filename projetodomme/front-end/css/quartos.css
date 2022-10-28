@@ -53,7 +53,7 @@ main {
 }
 
 
-form{
+#form-pesq{
     width: 30%;
     display: flex;
 }
@@ -70,7 +70,7 @@ form{
 
 }
 
-#btn{
+#btn-pesq{
     width: 40%;
     background-color: #931112;
     padding: 10px 5px;
@@ -84,8 +84,14 @@ form{
     border: none;
 }
 
+#nav-btn{
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+
 #quartos{
-    margin-top: 50px;
+    margin-top: 10px;
     width: 95%;
     border-radius: 10px;
     padding: 5px;
@@ -102,6 +108,7 @@ form{
     border-radius: 10px;
     transition: 0.2s;
     opacity: 80%;
+    display: inline-block;
 }
 
 .quarto:hover{
@@ -115,6 +122,14 @@ form{
     text-align: center;
 }
 
+.btn{
+    background-color:#212121;
+    width: 100px;
+    height: 30px;
+    color: #e6e6e6;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
 /* Footer */
 

@@ -71,11 +71,11 @@ router.post('/', async (req, res) => {
 
 
 // método de alterar suítes
-router.put('/:id', (req, res) => {
+router.patch('/:id', (req, res) => {
     let id = req.params.id;
     let dados = req.body;
-    const cmd_sql = 'UPDATE tblquarto SET tituloQuarto = ?, nrQuarto = ?, andarQ = ?, tpQuarto = ?, dsQuarto = ?, codigo_status = ? WHERE codigo_quarto = ?';
-    let dados_body = [dados.titulo, dados.numero, dados.andar, dados.tipo, dados.descricao, dados.codigoStatus, id];
+    const cmd_sql = 'UPDATE tblquarto SET tituloQuarto = ?, nrQuarto = ?, tpQuarto = ?, vlHoraQ = ? WHERE codigo_quarto = ?';
+    let dados_body = [dados.titulo, dados.numero, dados.tipo, dados.valor, id];
     db.query(cmd_sql, dados_body, (err, rows) => {
         if(err){
             res.status(400).send(err)

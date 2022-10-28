@@ -1,6 +1,7 @@
-const btn = document.querySelector('#btn');
+const btn = document.querySelector('#btn-pesq');
 const input = document.querySelector('#pesq');
 const tabela = document.querySelector('#quartos')
+const form = document.querySelector('#form-pesq');
 
 
 getQuartos();
@@ -54,8 +55,9 @@ function html(listaSuites){
 
     listaSuites.forEach(suite => {
 
+        const div = document.createElement('div');
+        div.classList.add('quarto')
         let html = `
-            <div class="quarto">
             <label for="nome">Nome do Quarto: </label>
             <input name="nome" value="${suite.tituloQuarto}" readonly>
         
@@ -73,11 +75,10 @@ function html(listaSuites){
         
             <label for="status">Status: </label>
             <input name="status"  value="${suite.codigo_status}" readonly>
-            
-            <!--<button type="submit" id="alterar" >Alterar</button>-->
-            </div>
         `
-        tabela.innerHTML += html;
+        
+        div.innerHTML += html;
+        tabela.appendChild(div);
     });
 }
 
@@ -86,5 +87,6 @@ function html(listaSuites){
 
 //     }
 // }
+
 
 
