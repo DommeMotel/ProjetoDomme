@@ -97,8 +97,8 @@ label{
     width: 35%;
 }
 
-#input-sexo{
-    width: 15%;
+.input-sexo{
+    width: 25%;
 }
 
 #input-nasc{

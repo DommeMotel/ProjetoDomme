@@ -17,8 +17,27 @@ router.get('/', (req, res) => {
 // método de busca de cliente específico
 router.get('/:cpf', (req, res) => {
     const cpf = req.params.cpf;
-    const cmd_sql = 'SELECT * FROM tblcliente WHERE CPF = ?'
+    const cmd_sql = 'select codigo_cliente, nmCliente, CPF, date_format(dtNascimento,"%d/%m/%y") as "dtNascimento",  sexo, cep, nmRua, nrEndereco, nmCidade,nrTelefone from tblCliente WHERE CPF = ?'
     db.query(cmd_sql, cpf, (err, rows) => {
+        if(err){
+            res.status(400).send({
+                mensagem: err
+            });
+        } else if(rows.length === 0){
+            res.status(400).send({
+                mensagem: 'Não encontrado'
+            })
+        } else {
+            res.status(200).json(rows)
+        };
+    });
+    
+});
+
+router.get('/id/:id', (req, res) => {
+    const id = req.params.id;
+    const cmd_sql = 'select * from tblCliente WHERE codigo_cliente = ?'
+    db.query(cmd_sql, id, (err, rows) => {
         if(err){
             res.status(400).send({
                 mensagem: err
@@ -57,8 +76,8 @@ router.post('/', async (req, res) => {
 router.put('/:id', (req, res) => {
     let dados = req.body;
     let id = req.params.id;
-    const cmd_sql = 'UPDATE tblcliente SET nmCliente =?, CPF = ?, sexo = ?, nmRua = ?, nmCidade =?, nrEndereco = ?, cep =?, nrTelefone = ? WHERE codigo_cliente = ?';
-    let dados_body = [dados.nome, dados.cpf, dados.idade, dados.sexo, dados.rua, dados.cidade, dados.endereco, dados.cep, dados.telefone, id]
+    const cmd_sql = 'UPDATE tblcliente SET nmCliente =?, CPF = ?,nrTelefone = ?, cep =?, nmCidade = ?, nmRua = ? WHERE codigo_cliente = ?';
+    let dados_body = [dados.nome, dados.cpf, dados.telefone, dados.cep, dados.cidade, dados.rua, id]
     db.query(cmd_sql, dados_body, (err, rows) =>{
         if(err){
             res.status(400).send({
@@ -67,7 +86,6 @@ router.put('/:id', (req, res) => {
         } else {
             res.status(200).send({
                 mensagem: 'Atualizado com sucesso',
-                dados: dados_body
             });
         };
     });
