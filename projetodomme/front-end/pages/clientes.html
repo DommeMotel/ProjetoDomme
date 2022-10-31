@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/alterarCliente.css">
     <link rel="stylesheet" href="../css/clientes.css">
     <title>Domme Motel - Clientes</title>
 </head>
@@ -28,15 +29,52 @@
     </header>
     
     <main>
-        <form>
-            <input type="text" id="pesq">
+        <form id="form-pesq">
+            <input type="text" id="pesq" placeholder="Digite o CPF do cliente">
             <button type="button" id="btn">Pesquisar</button>
         </form>
 
-        <ul id="lista">
-            
+        <div id="nav-btn">
+            <button type="button" class="btn" id="btn-alterar-cliente">Alterar</button>
+            <button type="button" class="btn" id="btn-excluir-cliente">Excluir</button>
+        </div>
 
-        </ul>  
+        <dialog>
+            <div class="container-dialog">
+                <form id="popup-form">
+                    <input type="text" name="id" class="dialog" id="found-id" placeholder="ID do cliente">
+
+                    <label for="newName">Novo nome</label>
+                    <input type="text" name="newName" class="dialog">
+    
+                    <label for="newCPF">Novo CPF</label>
+                    <input type="text" name="newCPF" class="dialog">
+
+                    <label for="newPhone">Novo Telefone</label>
+                    <input type="text" name="newPhone" class="dialog">
+
+                    <label for="newCEP">Novo CEP</label>
+                    <input type="text" name="newCEP" class="dialog" id="input-cep">
+
+                    <label for="enderecoCid">Cidade</label>
+                    <input type="text" name="enderecoCid" class="dialog" readonly id="input-cid">
+
+                    <label for="enderecoRua">Rua</label>
+                    <input type="text" name="enderecoRua" class="dialog" readonly id="input-rua">
+                    
+
+                    <div class="btns-dialog">
+                        <button class="btn-dialog" id="btnAlt-dialog-cliente">Alterar</button>
+                        <button class="btn-dialog" id="cancelar-dialog-cliente">Cancelar</button>
+                    </div>
+                </form>    
+            </div>
+            
+        </dialog>
+
+        <section id="clientes">
+
+        </section>
     </main>
 
     <footer>
@@ -51,6 +89,8 @@
     </footer>
 
    <script src="../js/getCliente.js"></script>
+   <script src="../js/putCliente.js"></script>
+   <script src="../js/viacep.js"></script>
 
 </body>
 </html>
