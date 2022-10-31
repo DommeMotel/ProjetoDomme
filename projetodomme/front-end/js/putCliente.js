@@ -44,6 +44,11 @@ function exibeDados(form, cliente){
     form.newCPF.value = cliente.CPF;
     form.newCEP.value = cliente.cep;
     form.newPhone.value = cliente.nrTelefone;
+    form.enderecoNumero.value = cliente.nrEndereco;
+    form.enderecoRua.value = cliente.nmRua;
+    form.enderecoCid.value = cliente.nmCidade;
+
+    console.log(cliente.nrEndereco)
 }
 
 
@@ -59,6 +64,7 @@ function dados(form){
     const telefone = form.newPhone.value;
     const cidade = form.enderecoCid.value;
     const rua = form.enderecoRua.value;
+    const numero = form.enderecoNumero.value
     
     const cliente = {
         nome: nome,
@@ -66,7 +72,8 @@ function dados(form){
         telefone: telefone,
         cep: cep,
         cidade: cidade,
-        rua: rua
+        rua: rua,
+        numero: numero
     };
 
     return cliente

@@ -44,11 +44,7 @@ header {
 main {
     width: 100%;
     padding: 20px 0;
-<<<<<<< HEAD
-    height: auto;
-=======
     height: 100vh;
->>>>>>> 6d26cc750898a374cec7287eb73798c3b4ea283c
     display: flex;
     flex-direction: column;
     align-items: center;

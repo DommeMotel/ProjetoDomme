@@ -73,7 +73,7 @@ label{
     padding: 20px 30px;
 }
 
-#form-cadastro-cliente>input{
+#form-cadastro-cliente>input, #form-cadastro-cliente>select{
 
     /* margin-bottom: 8px; */
     /* padding: 5px; */
