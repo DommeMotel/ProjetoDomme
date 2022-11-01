@@ -76,8 +76,8 @@ router.post('/', async (req, res) => {
 router.put('/:id', (req, res) => {
     let dados = req.body;
     let id = req.params.id;
-    const cmd_sql = 'UPDATE tblcliente SET nmCliente =?, CPF = ?,nrTelefone = ?, cep =?, nmCidade = ?, nmRua = ?, nrEndereco = ? WHERE codigo_cliente = ?';
     let dados_body = [dados.nome, dados.cpf, dados.telefone, dados.cep, dados.cidade, dados.rua, dados.numero, id]
+    const cmd_sql = 'UPDATE tblcliente SET nmCliente =?, CPF = ?,nrTelefone = ?, cep =?, nmCidade = ?, nmRua = ?, nrEndereco = ? WHERE codigo_cliente = ?';
     db.query(cmd_sql, dados_body, (err, rows) =>{
         if(err){
             res.status(400).send({

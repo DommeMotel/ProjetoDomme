@@ -64,24 +64,24 @@ function dados(form){
     return quarto;
 }
 
-async function putQuarto(quarto){
-    const id = inputId.value;
-    const res = await fetch(`http://localhost:8000/suites/${id}`, {
-        method: 'PATCH',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(quarto)
-        });
+// async function putQuarto(quarto){
+//     const id = inputId.value;
+//     const res = await fetch(`http://localhost:8000/suites/${id}`, {
+//         method: 'PATCH',
+//         headers: {
+//             Accept: 'application/json',
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(quarto)
+//         });
 
-        if(res.status === 200){
-            alert('Quarto cadastrado com sucesso');
-            window.location.href = "quartos.html"
-        } else { 
-            alert('Ops! Houve um erro');
-        };
-};
+//         if(res.status === 200){
+//             alert('Quarto cadastrado com sucesso');
+//             window.location.href = "quartos.html"
+//         } else { 
+//             alert('Ops! Houve um erro');
+//         };
+// };
 
 
 // const quarto = {

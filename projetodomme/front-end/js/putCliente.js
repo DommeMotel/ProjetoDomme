@@ -5,15 +5,13 @@ const exitDialog = document.querySelector("#cancelar-dialog-cliente");
 const inputId = document.querySelector("#found-id");
 const formularioPopup = document.querySelector('#popup-form');
 
-btnAlt.addEventListener('click', (e)=>{
-    e.preventDefault();
+btnAlt.onclick = () =>{
     popup.showModal();
-})
+};
 
-exitDialog.addEventListener('click', (e)=>{
-    e.preventDefault();
-    popup.close()
-});
+exitDialog.onclick = ()=>{
+    popup.close();
+};
 
 inputId.addEventListener('blur', (e)=>{
     e.preventDefault();
@@ -21,6 +19,14 @@ inputId.addEventListener('blur', (e)=>{
     retornaCliente(formularioPopup)
 })
 
+alterarCliente.addEventListener('click', (e)=>{
+    e.preventDefault();
+
+    uptadeCliente();
+
+    console.log(dados(formularioPopup));
+
+});
 
 async function retornaCliente(form){
     const id = inputId.value;
@@ -47,18 +53,11 @@ function exibeDados(form, cliente){
     form.enderecoNumero.value = cliente.nrEndereco;
     form.enderecoRua.value = cliente.nmRua;
     form.enderecoCid.value = cliente.nmCidade;
-
-    console.log(cliente.nrEndereco)
 }
 
 
-alterarCliente.addEventListener('click', (e)=>{
-    e.preventDefault();
-
-})
-
 function dados(form){
-    const nome = form.newName;
+    const nome = form.newName.value;
     const cpf = form.newCPF.value;
     const cep = form.newCEP.value;
     const telefone = form.newPhone.value;
@@ -76,10 +75,18 @@ function dados(form){
         numero: numero
     };
 
-    return cliente
+    return cliente;
 };
 
-
+function uptadeCliente(){
+    const id = inputId.value;
+    axios.put(`http://localhost:8000/clientes/${id}`, dados(formularioPopup))
+    .then(response =>  {
+        alert(JSON.stringify(response.data));
+        window.location.href = "clientes.html"
+    })
+    .catch(error => console.log(error));
+}
 
 
 
