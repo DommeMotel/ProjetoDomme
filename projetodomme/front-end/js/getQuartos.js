@@ -58,11 +58,12 @@ function html(listaSuites){
         const div = document.createElement('div');
         div.classList.add('quarto')
         let html = `
-            <label for="nome">Nome do Quarto: </label>
-            <input name="nome" value="${suite.tituloQuarto}" readonly>
-        
+
             <label for="codigo">Código: </label>
             <input name="codigo" value="${suite.codigo_quarto}" readonly>
+
+            <label for="nome">Nome do Quarto: </label>
+            <input name="nome" value="${suite.tituloQuarto}" readonly>
         
             <label for="numero">Número: </label>
             <input name="numero" value="${suite.nrQuarto}" readonly>
@@ -74,7 +75,7 @@ function html(listaSuites){
             <input name="valor" value="${suite.vlHoraQ}" readonly>
         
             <label for="status">Status: </label>
-            <input name="status"  value="${suite.codigo_status}" readonly>
+            <input name="status"  value="${suite.nmStatus}" readonly>
         `
         
         div.innerHTML += html;
