@@ -52,6 +52,85 @@ main {
 
 }
 
+#form-pesq{
+    width: 30%;
+    display: flex;
+}
+
+#pesq{
+    margin: 10px;
+    width: 70%;
+    font-size: 12pt;
+    padding: 10px 5px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px black solid;
+    text-align: center;
+
+}
+
+#btn-pesq{
+    width: 40%;
+    background-color: #931112;
+    padding: 10px 5px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 8px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 10px;
+    border: none;
+}
+
+#nav-btn{
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.btn{
+    background-color:#212121;
+    width: 100px;
+    height: 30px;
+    color: #e6e6e6;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#reservas{
+    margin-top: 10px;
+    width: 95%;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    background-color:  #212121;
+    
+}
+
+.reserva{
+    margin: 20px 0;
+    color: #e6e6e6;
+    padding: 5px;
+    background-color: #4a4a4a;
+    border-radius: 10px;
+    transition: 0.2s;
+    opacity: 80%;
+    display: inline-block;
+}
+
+.reserva:hover{
+    opacity: 100%;
+    font-size: 17px;
+}
+
+.reserva>input, .reserva>label{
+    width: 140px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+
 
 /* Footer */
 

@@ -1,0 +1,60 @@
+/* popup */
+dialog{
+    width: 1200px;
+    height: 700px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+}
+
+.container-dialog{
+    margin: auto;
+    margin-top: 50px;
+    width: 1100px;
+    height: 600px;
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.dialog{
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 250px;
+    padding: 3px;
+}
+
+
+label{
+    color: #e6e6e6;
+}
+
+.btn-dialog{
+    margin: auto;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    font-size: 15px;
+    background-color: #4a4a4a;
+    color: #e6e6e6;
+    
+}
+
+.btns-dialog{
+    display: flex;
+}
+
+#info-cliente{
+    display:flex;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.info-reserva{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}

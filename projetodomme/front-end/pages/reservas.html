@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/reservas.css">
-    <title>Domme Motel - Cadastro Cliente</title>
+    <link rel="stylesheet" href="../css/criarReserva.css">
+    <title>Domme Motel - Reservas</title>
 </head>
 
 <body>
@@ -28,8 +29,92 @@
     </header>
     
     <main>
-        
+        <form id="form-pesq">
+            <input type="text" id="pesq" placeholder="Código da reserva">
+            <button type="button" id="btn-pesq">Pesquisar</button>
+        </form>
+
+
+        <div id="nav-btn">
+            <button type="button" class="btn" id="btn-nova-reserva">Nova reserva</button>
+            <button type="button" class="btn" id="btn-excluir">Excluir reserva</button>
+        </div>
+
+        <section id="reservas">
+
+        </section>
        
+        <dialog>
+            <div class="container-dialog">
+                <form id="popup-form">
+                    <div id="info-cliente">
+                        <label for="newName">Id do cliente</label>
+                        <input type="text" name="newName" class="dialog">
+        
+                        <label for="newCPF">Nome cliente</label>
+                        <input type="text" name="newCPF" class="dialog">
+
+                        <label for="newPhone">CPF</label>
+                        <input type="text" name="newPhone" class="dialog">
+                    </div>
+                    
+                    <div class="info-reserva">
+                        <div id="inforeserva-p1">
+                            <label for="newCEP">Novo CEP</label>
+                            <input type="text" name="newCEP" class="dialog" id="input-cep">
+        
+                            <label for="enderecoCid">Cidade</label>
+                            <input type="text" name="enderecoCid" class="dialog" readonly id="input-cid">
+        
+                            <label for="enderecoRua">Rua</label>
+                            <input type="text" name="enderecoRua" class="dialog" readonly id="input-rua">
+        
+                            <label for="enderecoNumero">Numero°</label>
+                            <input type="text" name="enderecoNumero" class="dialog" id="input-numero">
+    
+                            <label for="enderecoNumero">Numero°</label>
+                            <input type="text" name="enderecoNumero" class="dialog" id="input-numero">
+    
+                            <label for="enderecoNumero">Numero°</label>
+                            <input type="text" name="enderecoNumero" class="dialog" id="input-numero">
+    
+                            <label for="enderecoNumero">Numero°</label>
+                            <input type="text" name="enderecoNumero" class="dialog" id="input-numero">
+                        </div>
+                        <div>
+                            <div id="inforeserva-p1">
+                                <label for="newCEP">Novo CEP</label>
+                                <input type="text" name="newCEP" class="dialog" id="input-cep">
+            
+                                <label for="enderecoCid">Cidade</label>
+                                <input type="text" name="enderecoCid" class="dialog" readonly id="input-cid">
+            
+                                <label for="enderecoRua">Rua</label>
+                                <input type="text" name="enderecoRua" class="dialog" readonly id="input-rua">
+            
+                                <label for="enderecoNumero">Numero°</label>
+                                <input type="text" name="enderecoNumero" class="dialog" id="input-numero">
+        
+                                <label for="enderecoNumero">Numero°</label>
+                                <input type="text" name="enderecoNumero" class="dialog" id="input-numero">
+        
+                                <label for="enderecoNumero">Numero°</label>
+                                <input type="text" name="enderecoNumero" class="dialog" id="input-numero">
+        
+                                <label for="enderecoNumero">Numero°</label>
+                                <input type="text" name="enderecoNumero" class="dialog" id="input-numero">
+                            </div>  
+                        </div>
+                    </div>
+                
+                    <div class="btns-dialog">
+                        <button class="btn-dialog" id="btn-confirmar">Confirmar reserva</button>
+                        <button class="btn-dialog" id="btn-cancelar">Cancelar</button>
+                    </div>
+                </form>    
+            </div>
+            
+        </dialog>
     </main>
 
     <footer>
@@ -42,6 +127,9 @@
             <span>Fale conosco: (xx) xxxxx-xxxx</span>
         </div>
     </footer>
+
+    <script src="../js/getReservas.js"></script>
+    <script src="../js/postReserva.js"></script>
 </body>
 
 </html>

@@ -12,17 +12,17 @@ btnCadastrar.addEventListener('click', (event) => {
 });
 
 const getDados = (form) =>{
-    let nomeQuarto = form.nome;
-    let nrQuarto = form.numeroQuarto;
-    let tipoQuarto = form.select;
-    let valorHoraQ = form.valorHora;
+    let nome = form.nome.value;
+    let numero = form.numeroQuarto.value;
+    let categoria = form.select.value;
+    let valorHora = form.valorHora.value;
 
     let quarto = {
-        tituloQuarto: nomeQuarto.value,
-        nrQuarto: nrQuarto.value,
-        tpQuarto: tipoQuarto.value,
-        vlHoraQ: parseFloat(valorHoraQ.value),
-        codigo_status: 1
+        nome: nome,
+        numero: numero,
+        categoria: categoria,
+        valorHora: parseFloat(valorHora),
+        status: 1
     };
 
     //codigo do quarto não pode ser nulo no banco porem não tem campo de preencher no html, defini como padrão 1 (analisar se precisa ser feita alguma alteração)

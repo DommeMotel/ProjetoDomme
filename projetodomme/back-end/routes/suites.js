@@ -56,7 +56,7 @@ router.get('/status/:status', (req, res) => {
 router.post('/', async (req, res) => {
     let dados = req.body;
     const cmd_sql = 'INSERT INTO tblquarto (tituloQuarto, nrQuarto, tpQuarto, vlHoraQ, codigo_status) VALUES (?, ?, ?, ?, ?)';
-    let dados_body = [dados.tituloQuarto, dados.nrQuarto, dados.tpQuarto, dados.vlHoraQ, dados.codigo_status];
+    let dados_body = [dados.nome, dados.numero, dados.categoria, dados.valorHora, dados.status];
     db.query(cmd_sql, dados_body, (err, rows) => {
         if(err){
             res.status(400).send(err);

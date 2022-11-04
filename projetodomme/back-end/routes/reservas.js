@@ -11,6 +11,20 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:codigo', (req, res) =>{
+    const codigo = req.params.codigo;
+const cmd_sql = `SELECT * FROM tblreserva WHERE codigo_reserva = ?`
+    db.query(cmd_sql, codigo, (err, reserva) =>{
+        if(err){
+            res.status(400).send({
+                mensagem: 'Não encontrado'
+            })
+        } else {
+            res.status(200).json(reserva)
+        };
+    });
+});
+
 
 // método de adicionar reservas
 router.post('/', (req, res) => {
