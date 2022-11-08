@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+#conteudo-login{
+    width: 100vw;
+    display: flex;
+}
+
+
+/* Parte esquerda */
+#section-left{
+    width: 50vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.div-logo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-logo > img{
+    width: 250px;
+}
+
+/* Parte direita */
+
+h2{
+    color: #931112;
+}
+
+#section-right{
+    width: 50vw;
+    height: 100vh;
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#div-form{
+    width: 47%;
+    height: 57%;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-login{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 35px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px #fff;
+}
+
+#form-login > img{
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield>input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield>label {
+    color: #931112;
+    margin-bottom: 10px;
+}
+
+.textfield>input::placeholder {
+    color: #931112;
+}
+
+#btn-login {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #fff;
+    background: #931112;
+    cursor: pointer;
+}
+
+.btncancelar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btncancelar > a {
+    color: #931112;
+
+}
