@@ -7,7 +7,18 @@ const router = express.Router();
 
 // método de retorno de todos os clientes
 router.get('/', (req, res) => {
-    const cmd_sql = 'select codigo_cliente, nmCliente, CPF, date_format(dtNascimento,"%d/%m/%y") as "dtNascimento",  sexo, cep, nmRua, nrEndereco, nmCidade,nrTelefone from tblCliente';
+const cmd_sql = `SELECT 
+                        codigo_cliente,
+                        nmCliente,
+                        CPF,
+                        date_format(dtNascimento,"%d/%m/%y") as "dtNascimento",
+                        sexo,
+                        cep,
+                        nmRua,
+                        nrEndereco,
+                        nmCidade,
+                        nrTelefone
+                        from tblCliente;`
     db.query(cmd_sql, (err, rows) => {
         res.status(200).send(rows);
     });
