@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/reservas.css">
     <link rel="stylesheet" href="../css/criarReserva.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Domme Motel - Reservas</title>
 </head>
 
@@ -71,21 +72,21 @@
                             </select>
         
                             <label for="dataEntrada">Data Entrada</label>
-                            <input type="datetime-local" name="dataEntrada" class="dialog"  id="input-rua">
+                            <input type="datetime-local" name="dataEntrada" class="dialog"  id="input-dtEntrada">
         
                             <label for="periodo">Periodo</label>
-                            <select type="text" name="periodo" class="dialog" id="input-numero">
+                            <select type="text" name="periodo" class="dialog" id="input-periodo">
                                 <option value="">Escolher periodo</option>
                                 <option value="3">3 Horas</option>
                                 <option value="6">6 Horas</option>
                                 <option value="12">12 Horas</option>
                             </select>
                             
-                            <label for="enderecoNumero">Quantidade Pessoas</label>
-                            <input type="number" name="qtdPessoas" class="dialog" id="input-numero">
+                            <label for="qtdPessoas">Quantidade Pessoas</label>
+                            <input type="number" name="qtdPessoas" class="dialog" id="input-qtdPessoas">
                             
-                            <label for="enderecoNumero">Valor Hora</label>
-                            <input type="text" name="valorHora" class="dialog" id="input-numero">
+                            <label for="valorHora">Valor Hora</label>
+                            <input type="text" name="valorHora" class="dialog" id="input-valorHora">
 
                         </div>
                         <!-- <div>
@@ -136,7 +137,7 @@
     </footer>
 
     <script src="../js/getReservas.js"></script>
-    <script src="../js/postReserva.js"></script>
+    <script src="../js/criaReserva.js"></script>
 </body>
 
 </html>

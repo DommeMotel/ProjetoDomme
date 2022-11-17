@@ -52,7 +52,18 @@ const cmd_sql = `SELECT * FROM tblreserva WHERE codigo_reserva = ?`
 
 // método de adicionar reservas
 router.post('/', (req, res) => {
-    
+    const cmd_sql = `INSERT INTO tblreserva (dataEntrada, periodo, quantidadePessoas, vlHora, codigo_cliente, codigo_quarto,codigo_pagamento, codigo_status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+    const dados = req.body;
+    const dados_body = [dados.dataEntrada, dados.periodo, dados.qtdPessoas, dados.valorH, dados.id_cliente, dados.quarto,dados.codigo_pagamento, dados.codigo_status];
+    db.query(cmd_sql, dados_body, (err, rows)=>{
+        if(err){
+            res.status(400).send(err);
+        } else {
+            res.status(201).send({
+                mensagem: 'Reserva criada com sucesso'
+            });
+        };
+    });
 });
 
 

@@ -6,6 +6,7 @@ const popup = document.querySelector("dialog");
 const selectNome = document.querySelector("#selectNome");
 const selectQuarto = document.querySelector("#selectQuarto");
 
+
 btnNovaReserva.onclick = ()=>{
     popup.showModal();
 }
@@ -19,6 +20,20 @@ selectQuarto.addEventListener('blur', (e)=>{
     getValorHoraQuarto()
 })
 
+btConfirmarReserva.addEventListener("click", (e)=>{
+    e.preventDefault();
+
+    const dados_reserva = getDadosForm(formDialog);
+
+    // cria_reserva(dados_reserva);
+    if(cria_reserva(dados_reserva)){
+        update();
+    };
+
+})
+
+
+
 //Coletando dados para a criação da nova reserva
 getClientes();
 getQuartos();
@@ -26,8 +41,6 @@ getQuartos();
 async function getClientes(){
     const res = await fetch("http://localhost:8000/Clientes/nomesClientes");
     const nomesCliente = await res.json();
-
-    console.log(nomesCliente)
 
     criarSelectCliente(nomesCliente)
 }
@@ -51,14 +64,14 @@ async function getQuartos(){
 function criarSelectQuarto(nomesQuartos){
     nomesQuartos.forEach(quarto => {
 
-        selectQuarto.innerHTML += `<option value = "${quarto.codigo_quarto}">${quarto.tituloQuarto}</option>`;
+        selectQuarto.innerHTML += `<option value = "${quarto.codigo_quarto}"> ${quarto.tituloQuarto} - ${quarto.tpQuarto} - ${quarto.nrQuarto} </option>`;
     });
 }
 
 //Pegando os dados dos inputs
 
 function getDadosForm(form){
-    const inputNome = form.cliente;
+    const inputCliente = form.cliente;
     const inputQuarto = form.quarto;
     const inputDtEntrada = form.dataEntrada;
     const inputPeriodo = form.periodo;
@@ -67,15 +80,14 @@ function getDadosForm(form){
 
 
     const reserva = {
-        nome: inputNome.value,
-        cpf: inputCpf.value,
-        sexo: inputSexo.value,
-        dtNasc: inputDtNasc.value,
-        cidade: inputCidade.value,
-        rua: inputRua.value,
-        numero: inputNr.value,
-        cep: inputCep.value,
-        telefone: inputTelefone.value
+        dataEntrada: inputDtEntrada.value,
+        periodo: inputPeriodo.value,
+        qtdPessoas: inputQtdPessoas.value,
+        valorH: inputValorHora.value,
+        id_cliente: inputCliente.value,
+        quarto: inputQuarto.value,
+        codigo_pagamento: 5,
+        codigo_status: 5
     };
 
     return reserva;
@@ -85,10 +97,8 @@ function getDadosForm(form){
 async function getValorHoraQuarto(){
 
     let idQuarto = formDialog.quarto.value;
-    console.log(idQuarto);
     const res = await fetch(`http://localhost:8000/suites/${idQuarto}`);
     const quarto = await res.json();
-    console.log(quarto.vlHoraQ);
     if(res.status === 200){
 
         quarto.forEach(quarto => {
@@ -106,6 +116,37 @@ function retornaValor(form, quarto){
     form.valorHora.value = quarto.vlHoraQ;
 }
 
+async function cria_reserva(dados){
+    try{
+        const res = await fetch(`http://localhost:8000/reservas`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+        });
 
+    if(res.status === 201){
+        alert("Reserva feita!");
+        window.location.href = "reservas.html"
+        return true;
+    } else {
+        alert('Ops! Houve um erro');
+    }
+    } catch(erro){
+        console.log(erro);
+    }    
+}
 
-
+function update(){
+    const id = selectQuarto.value;
+    const suite = {
+        codigo_status: 4
+    }
+    axios.put(`http://localhost:8000/suites/nome/${id}`, suite)
+    .then(response =>  {
+        window.location.href = "reservas.html"
+    })
+    .catch(error => console.log(error));
+}

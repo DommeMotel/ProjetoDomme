@@ -28,8 +28,11 @@ router.get('/', (req, res) => {
 router.get('/nomesQuarto', (req, res) => {
     const cmd_sql = `SELECT
                     codigo_quarto,
-                    tituloQuarto
-                    FROM tblQuarto`;
+                    tpQuarto,
+                    tituloQuarto,
+                    nrQuarto
+                    FROM tblQuarto
+                    WHERE codigo_status = 1`;
     db.query(cmd_sql, (err, rows) => {
         if(err){
             res.status(400).send({
@@ -112,6 +115,21 @@ router.put('/:id', (req, res) => {
     });
 });
 
+router.put('/nome/:id', (req, res) => {
+    let id = req.params.id;
+    let dados = req.body;
+    let dados_body = [dados.codigo_status, id];
+    const cmd_sql = 'UPDATE tblquarto SET codigo_status = ? WHERE codigo_quarto = ?';
+    db.query(cmd_sql, dados_body, (err, rows) => {
+        if(err){
+            res.status(400).send(err)
+        } else {
+            res.status(200).json({
+                mensagem: 'Quarto alterado com sucesso'
+            });
+        };
+    });
+});
 
 // método de deletar suítes
 router.delete('/:id', (req, res) => {

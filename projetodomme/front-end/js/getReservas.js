@@ -46,10 +46,10 @@ async function getReservas(){
     try{
         const URL = 'http://localhost:8000/reservas'
         const res = await fetch(URL);
-
+        const reservas = await res.json();
+        console.log(reservas);
         if(res.status === 200){
-
-            const reservas = await res.json();
+            
             return reservas;
         } else {
             alert("não encontrado")
