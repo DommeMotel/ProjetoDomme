@@ -87,31 +87,31 @@ async function showReserva(reservas){
             <input name="quantPess" value="${reserva.quantidadePessoas}" readonly>
         
             <label for="valorH">Valor hora: </label>
-            <input name="valorH"  value="${reserva.vlHora}" readonly>
+            <input name="valorH"  value="R$ ${reserva.vlHora}" readonly>
             
             <label for="valorC">Valor consumo: </label>
-            <input name="valorC"  value="${reserva.vlConsumo}" readonly>
+            <input name="valorC"  value="R$ ${reserva.vlConsumo}" readonly>
 
             <label for="valorD">Valor dano: </label>
-            <input name="valorD"  value="${reserva.vlDano}" readonly>
+            <input name="valorD"  value="R$ ${reserva.vlDano}" readonly>
             
             <label for="valorHAd">Valor hora adicional: </label>
-            <input name="valorHAd"  value="${reserva.vlHoraAdicional}" readonly>
+            <input name="valorHAd"  value="R$ ${reserva.vlHoraAdicional}" readonly>
 
             <label for="valorT">Valor total: </label>
-            <input name="valorT"  value="${reserva.vlTotal}" readonly>
+            <input name="valorT"  value="R$ ${reserva.vlTotal}" readonly>
 
-            <label for="idCliente">Id cliente: </label>
-            <input name="idCliente"  value="${reserva.codigo_cliente}" readonly>
+            <label for="idCliente">CPF cliente: </label>
+            <input name="idCliente"  value="${reserva.cpf}" readonly>
 
-            <label for="idSuite">Id suite: </label>
-            <input name="idSuite"  value="${reserva.codigo_quarto}" readonly>
+            <label for="idSuite">Suite: </label>
+            <input name="idSuite"  value="${reserva.tpQuarto}" readonly>
 
-            <label for="idPag">Id pagamento: </label>
-            <input name="idPag"  value="${reserva.codigo_pagamento}" readonly>
+            <label for="idPag">Tipo pagamento: </label>
+            <input name="idPag"  value="${reserva.tpPagamento}" readonly>
 
             <label for="status">Status: </label>
-            <input name="status"  value="${reserva.codigo_status}" readonly>
+            <input name="status"  value="${reserva.nmStatus}" readonly>
         `
 
         div.innerHTML += html;

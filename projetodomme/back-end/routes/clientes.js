@@ -24,6 +24,16 @@ const cmd_sql = `SELECT
     });
 });
 
+router.get('/nomesClientes', (req, res) => {
+    const cmd_sql = `SELECT 
+                            codigo_cliente,
+                            nmCliente
+                            from tblCliente;`
+        db.query(cmd_sql, (err, rows) => {
+            res.status(200).send(rows);
+        });
+    });
+
 
 // método de busca de cliente específico
 router.get('/:cpf', (req, res) => {

@@ -4,7 +4,32 @@ const router = express.Router();
 
 // método de retorno de suítes
 router.get('/', (req, res) => {
-    const cmd_sql = `SELECT codigo_quarto, tituloQuarto, nrQuarto, tpQuarto, vlHoraQ, b.nmStatus FROM tblQuarto a inner join tblStatus b on a.codigo_status = b.codigo_status`;
+    const cmd_sql = `SELECT
+                    codigo_quarto,
+                    tituloQuarto,
+                    nrQuarto,
+                    tpQuarto, 
+                    vlHoraQ,
+                    b.nmStatus
+                    FROM tblQuarto a
+                    inner join tblStatus b
+                    on a.codigo_status = b.codigo_status`;
+    db.query(cmd_sql, (err, rows) => {
+        if(err){
+            res.status(400).send({
+                mensagem: 'não encontrado'
+            });
+        } else {
+            res.status(200).json(rows);
+        };
+    });
+});
+
+router.get('/nomesQuarto', (req, res) => {
+    const cmd_sql = `SELECT
+                    codigo_quarto,
+                    tituloQuarto
+                    FROM tblQuarto`;
     db.query(cmd_sql, (err, rows) => {
         if(err){
             res.status(400).send({

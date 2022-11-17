@@ -84,7 +84,7 @@ form{
     margin: 10px;
 }
 
-.form>input{
+.form-pagamento>input{
     margin-bottom: 8px;
     padding: 10px 5px;
     outline: none;

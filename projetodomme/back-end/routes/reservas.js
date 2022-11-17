@@ -5,7 +5,31 @@ const db = require('../models/db');
 
 // método de retorno de todos as reservas
 router.get('/', (req, res) => {
-    const cmd_sql = 'SELECT * FROM tblreserva'
+const cmd_sql = `SELECT
+a.codigo_reserva,
+date_format(a.DataEntrada,'%d/%m/%y %T') as "DataEntrada",
+date_format(a.DataSaida,'%d/%m/%y %T') as "DataSaida",
+a.periodo,
+a.quantidadePessoas,
+a.vlHora,
+a.vlConsumo,
+a.vlDano,
+a.vlHoraAdicional,
+a.vlTotal,
+b.cpf,
+c.tituloQuarto,
+c.tpQuarto,
+d.tpPagamento,
+e.nmStatus
+FROM tblreserva a
+INNER JOIN tblCliente b
+on a.codigo_cliente = b.codigo_cliente
+INNER JOIN tblQuarto c
+on a.codigo_quarto = c.codigo_quarto
+INNER JOIN tblPagamento d
+on a.codigo_pagamento = d.codigo_pagamento
+INNER JOIN tblstatus e
+on a.codigo_status = e.codigo_status`
     db.query(cmd_sql, (err, rows) => {
         res.status(200).send(rows);
     });

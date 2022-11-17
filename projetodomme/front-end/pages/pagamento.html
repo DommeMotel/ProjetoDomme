@@ -28,55 +28,61 @@
     </header>
     
     <main>
+        <form>
 
-    <section id="details" class="section-form">
-        <p>Detalhes da Conta</p>
-        <hr>
-        <form class="form">
-            <label>Suíte:</label>
-                <input type="text" name="suite" id="input-suite" placeholder="Suite" required > 
-            <label>Categoria:</label>
-                <input type="text" name="categoria" id="input-categoria" placeholder="Categoria" required> 
-            <label>Entrada:</label>
-                <input type="text" name="entrada" id="input-entrada" placeholder="Hora da Entrada" required> 
-            <label>Saída:</label>
-                <input type="text" name="saida" id="input-saida" placeholder="Hora da Saída" required> 
-            <label>Permanência:</label>
-                <input type="text" name="permanencia" id="input-permanencia" placeholder="Tempo de Permanência" required> 
-            <label>Qtde. de pessoas:</label>
-                <input type="text" name="qtdpessoas" id="input-qtdpessoas" placeholder="Qtde. de Pessoas" required> 
-        </form>
-
-    </section>
-
-    <section id="consumo" class="section-form">
-        <p>Consumo</p>
-        <hr>
-        <form class="form">
-            <label>Consumo:</label>
-            <input type="text" name="consumo" id="input-consumo" placeholder="Consumo" required> 
-            <label>Total::</label>
-            <br>
-        </form>
-    </section>
-
-    <section id="pag" class="section-form">
-        <p>Pagamento:</p>
-        <hr>
-        <form id="pagamento">
-            <label>Formas de Pagamento:</label>  <br>
-                <input type="radio" name="pagamento" value="pix">PIX  <br>
-                <input type="radio" name="pagamento" value="dinheiro">Dinheiro  <br>
-                <input type="radio" name="pagamento" value="debito">Débito  <br>
-                <input type="radio" name="pagamento" value="credito">Crédito  <br>
-                <div>
-                    <button type="submit" class="btn-pag">Confirmar</button>
-                    <button type="reset" class="btn-pag">Cancelar</button>
+            <section id="details" class="section-form">
+                <p>Detalhes da Conta</p>
+                <hr>
+                <div class="form-pagamento">
+                    <label>Suíte:</label>
+                        <input type="text" name="suite" id="input-suite" placeholder="Suite" required > 
+                    <label>Categoria:</label>
+                        <input type="text" name="categoria" id="input-categoria" placeholder="Categoria" required> 
+                    <label>Entrada:</label>
+                        <input type="text" name="entrada" id="input-entrada" placeholder="Hora da Entrada" required> 
+                    <label>Saída:</label>
+                        <input type="datetime-local" name="saida" id="input-saida" placeholder="Hora da Saída" required> 
+                    <label>Permanência:</label>
+                        <input type="text" name="permanencia" id="input-permanencia" placeholder="Tempo de Permanência" required> 
+                    <label>Qtde. de pessoas:</label>
+                        <input type="text" name="qtdpessoas" id="input-qtdpessoas" placeholder="Qtde. de Pessoas" required> 
                 </div>
-        </form>
-    </section>
+        
+            </section>
+        
+            <section id="consumo" class="section-form">
+                <p>Consumo</p>
+                <hr>
+                <div class="form-pagamento">
+                    <label>Horas Adicionais:</label>
+                    <input type="number" name="consumo" id="input-consumo" placeholder="Horas Adicionais" required> 
 
-
+                    <label>Consumo:</label>
+                    <input type="text" name="consumo" id="input-consumo" placeholder="Consumo" required> 
+                    
+                    <label>Dano:</label>
+                    <input type="text" name="consumo" id="input-consumo" placeholder="Dano" required> 
+                    <label>Total::</label>
+                    <br>
+                </div>
+            </section>
+        
+            <section id="pag" class="section-form">
+                <p>Pagamento:</p>
+                <hr>
+                <div id="pagamento">
+                    <label>Formas de Pagamento:</label>  <br>
+                        <input type="radio" name="pagamento" value="pix">PIX  <br>
+                        <input type="radio" name="pagamento" value="dinheiro">Dinheiro  <br>
+                        <input type="radio" name="pagamento" value="debito">Débito  <br>
+                        <input type="radio" name="pagamento" value="credito">Crédito  <br>
+                        <div>
+                            <button type="submit" class="btn-pag">Confirmar</button>
+                            <button type="reset" class="btn-pag">Cancelar</button>
+                        </div>
+                </div>
+            </section>
+            </form>
     </main>
 
     <footer>
