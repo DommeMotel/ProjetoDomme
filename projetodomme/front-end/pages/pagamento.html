@@ -55,14 +55,15 @@
                 <hr>
                 <div class="form-pagamento">
                     <label>Horas Adicionais:</label>
-                    <input type="number" name="consumo" id="input-consumo" placeholder="Horas Adicionais" required> 
+                    <input type="number" name="horaAd" id="input-horaAd" placeholder="Horas Adicionais" required> 
 
                     <label>Consumo:</label>
                     <input type="text" name="consumo" id="input-consumo" placeholder="Consumo" required> 
                     
                     <label>Dano:</label>
-                    <input type="text" name="consumo" id="input-consumo" placeholder="Dano" required> 
-                    <label>Total::</label>
+                    <input type="text" name="dano" id="input-dano" placeholder="Dano" required> 
+                    <label>Total:</label>
+                    <input type="number" name="total" id="total" readonly>
                     <br>
                 </div>
             </section>
@@ -96,6 +97,7 @@
         </div>
     </footer>
 
+    <script src="../js/pagamento.js"></script>
 </body>
 
 </html>

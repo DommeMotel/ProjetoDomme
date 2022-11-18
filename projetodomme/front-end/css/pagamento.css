@@ -111,7 +111,11 @@ label{
     width: 69%;
 }
 
-#input-entrada, #input-saida, #input-qtdpessoas{
+#input-entrada, #input-saida{
+    width: 30%;
+}
+
+#input-qtdpessoas{
     width: 15%;
 }
 

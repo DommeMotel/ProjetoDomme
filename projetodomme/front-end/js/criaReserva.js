@@ -87,7 +87,11 @@ function getDadosForm(form){
         id_cliente: inputCliente.value,
         quarto: inputQuarto.value,
         codigo_pagamento: 5,
-        codigo_status: 5
+        codigo_status: 5,
+        consumo: 0,
+        dano: 0,
+        horaAd: 0,
+        total: 0
     };
 
     return reserva;
