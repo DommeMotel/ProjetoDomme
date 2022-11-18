@@ -53,14 +53,16 @@ function html(listaClientes){
 
         const clienteFormat = cliente.nmCliente.split(' ').splice(0, 2).join(' ');
 
-        const html = `               
+        const html = `
+        
+
             <label for="nome">Nome</label>
             <input name="nome" value="${clienteFormat}" readonly>
 
             <label for="cpf">CPF</label>
             <input name="nome" value="${cliente.CPF}" readonly>
 
-            <label for="dtNasc">Data de nascimento</label>
+            <label for="dtNasc">Dt Nasc</label>
             <input name="dtNasc" value="${cliente.dtNascimento}" readonly>
 
             <label for="sexo">Sexo</label>
@@ -69,8 +71,11 @@ function html(listaClientes){
             <label for="CEP">CEP</label>
             <input name="CEP" value="${cliente.cep}" readonly>
 
-            <label for="tel">Telefone</label>
+            <label for="tel">Tel</label>
             <input name="tel" value="${cliente.nrTelefone}" readonly>
+
+            <label for="tel">Status</label>
+            <input name="tel" value="${cliente.nmStatus}" readonly>
         `
 
         div.innerHTML += html;

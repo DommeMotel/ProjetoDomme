@@ -46,4 +46,32 @@ label{
 
 .btns-dialog{
     display: flex;
+    width: 100%;
+    margin-top: 7%;
+}
+.popup-form-cancelamento{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-dialog-cancelamento{
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-cancelar{
+    width: 35%;
+    height: 25%;
+}
+
+.popup-form-cancelamento>input{
+    text-align: center;
 }

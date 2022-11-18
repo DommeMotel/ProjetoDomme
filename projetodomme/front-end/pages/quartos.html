@@ -38,7 +38,7 @@
 
         <div id="nav-btn">
             <button type="button" class="btn" id="btn-alterar">Alterar</button>
-            <button type="button" class="btn" id="btn-excluir">Excluir</button>
+            <button type="button" class="btn" id="btn-excluir">Ativar/Cancelar</button>
         </div>
 
 
@@ -71,7 +71,21 @@
             </div>
             
         </dialog>
+        <dialog id="dialog-cancelar" class="dialog-cancelar">
 
+            <div class="container-dialog-cancelamento">
+                <form id="popup-form-cancelamento" class="popup-form-cancelamento">
+                    
+                    <input type="number" name="cdQuartoCancelado" placeholder="Código Quarto" id="ativaedesativa">
+
+                    <div class="btns-dialog">
+                        <button class="btn-dialog" id="ativarQuarto">Ativar Quarto</button>
+                        <button class="btn-dialog" id="cancelarQuarto">Cancelar Quarto</button>
+                        <button class="btn-dialog" id="exit">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </dialog>
 
         <section id="quartos">
             
@@ -92,6 +106,7 @@
     
     <script src="../js/getQuartos.js"></script>
     <script src="../js/putQuarto.js"></script>
+    <script src="../js/desativarQuarto.js"></script>
     
 </body>
 </html>

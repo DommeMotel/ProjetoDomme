@@ -17,8 +17,11 @@ const cmd_sql = `SELECT
                         nmRua,
                         nrEndereco,
                         nmCidade,
-                        nrTelefone
-                        from tblCliente;`
+                        nrTelefone,
+                        b.nmStatus
+                        from tblCliente a
+                        INNER JOIN tblstatus b
+                        on a.codigo_status = b.codigo_status;`
     db.query(cmd_sql, (err, rows) => {
         res.status(200).send(rows);
     });
@@ -38,7 +41,18 @@ router.get('/nomesClientes', (req, res) => {
 // método de busca de cliente específico
 router.get('/:cpf', (req, res) => {
     const cpf = req.params.cpf;
-    const cmd_sql = 'select codigo_cliente, nmCliente, CPF, date_format(dtNascimento,"%d/%m/%y") as "dtNascimento",  sexo, cep, nmRua, nrEndereco, nmCidade,nrTelefone from tblCliente WHERE CPF = ?'
+    const cmd_sql = `SELECT
+                     codigo_cliente,
+                     nmCliente,
+                     CPF,
+                     date_format(dtNascimento,"%d/%m/%y") as "dtNascimento",
+                     sexo,
+                     cep,
+                     nmRua,
+                     nrEndereco,
+                     nmCidade,
+                     nrTelefone 
+                     from tblCliente WHERE CPF = ?`
     db.query(cmd_sql, cpf, (err, rows) => {
         if(err){
             res.status(400).send({
@@ -113,22 +127,23 @@ router.put('/:id', (req, res) => {
 });
 
 
-// método de deletar cliente
-router.delete('/:id', (req, res) => {
+// método de cancelar cliente cliente
+router.put('/cancelar/:id', (req, res) => {
+    let dados = req.body;
     let id = req.params.id;
-    const cmd_sql = 'DELETE FROM tblcliente WHERE codigo_cliente = ?'
-
-    db.query(cmd_sql, id, (err, rows) => {
+    let dados_body = [ dados.codigo_status, id]
+    const cmd_sql = 'UPDATE tblcliente SET codigo_status = ? WHERE codigo_cliente = ?';
+    db.query(cmd_sql, dados_body, (err, rows) =>{
         if(err){
             res.status(400).send({
-                mensagem: 'Cliente não excluido'
+                mensagem: err
             });
-        }else{
-            res.status(201).send({
-                mensagem: 'Cliente excluído com sucesso'
+        } else {
+            res.status(200).send({
+                mensagem: 'Atualizado com sucesso',
             });
         };
-    })
+    });
 });
 
 

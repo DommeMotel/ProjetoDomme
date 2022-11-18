@@ -131,18 +131,17 @@ router.put('/nome/:id', (req, res) => {
     });
 });
 
-// método de deletar suítes
-router.delete('/:id', (req, res) => {
+router.put('/cancelar/:id', (req, res) => {
     let id = req.params.id;
-    const cmd_sql = 'DELETE FROM tblquarto WHERE codigo_quarto = ?'
-    db.query(cmd_sql, id, (err, rows) => {
+    let dados = req.body;
+    let dados_body = [dados.codigo_status, id];
+    const cmd_sql = 'UPDATE tblquarto SET codigo_status = ? WHERE codigo_quarto = ?';
+    db.query(cmd_sql, dados_body, (err, rows) => {
         if(err){
-            res.status(400).send({
-                mensagem: 'Quarto não excluído'
-            });
+            res.status(400).send(err)
         } else {
-            res.status(200).send({
-                mensagem: 'Quarto excluído com sucesso'
+            res.status(200).json({
+                mensagem: 'Quarto alterado com sucesso'
             });
         };
     });

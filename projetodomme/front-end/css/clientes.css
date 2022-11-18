@@ -49,6 +49,7 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: #e6e6e6;
+    font-size: 14px;
 }
 
 #form-pesq{
@@ -84,9 +85,10 @@ main {
 }
 
 .cliente>input{
-    width: 11%;
+    width: 10%;
     border-radius: 10px;
     text-align: center;
+    font-size: 12px;
 }
 
 .cliente>label{
@@ -98,7 +100,7 @@ main {
 #pesq{
     margin: 10px;
     width: 70%;
-    font-size: 12pt;
+    font-size: 12px;
     padding: 10px 5px;
     outline: none;
     border-radius: 10px;
@@ -166,3 +168,5 @@ footer{
     text-decoration: none;
     color: #fff;
 }
+
+

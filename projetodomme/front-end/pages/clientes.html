@@ -15,7 +15,7 @@
 <body>
     <header>
         <img id="imagem-header" src="../img/logo.png">
-        
+
         <nav class="navegacao">
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -28,7 +28,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <form id="form-pesq">
             <input type="text" id="pesq" placeholder="Digite o CPF do cliente">
@@ -37,17 +37,17 @@
 
         <div id="nav-btn">
             <button type="button" class="btn" id="btn-alterar-cliente">Alterar</button>
-            <button type="button" class="btn" id="btn-excluir-cliente">Excluir</button>
+            <button type="button" class="btn" id="btn-excluir-cliente">Ativar/Cancelar</button>
         </div>
 
-        <dialog>
+        <dialog id="dialog-put">
             <div class="container-dialog">
                 <form id="popup-form">
                     <input type="text" name="id" class="dialog" id="found-id" placeholder="ID do cliente">
 
                     <label for="newName">Novo nome</label>
                     <input type="text" name="newName" class="dialog">
-    
+
                     <label for="newCPF">Novo CPF</label>
                     <input type="text" name="newCPF" class="dialog">
 
@@ -65,15 +65,29 @@
 
                     <label for="enderecoNumero">Numero°</label>
                     <input type="text" name="enderecoNumero" class="dialog" id="input-numero">
-                    
+
 
                     <div class="btns-dialog">
                         <button class="btn-dialog" id="btnAlt-dialog-cliente">Alterar</button>
                         <button class="btn-dialog" id="cancelar-dialog-cliente">Cancelar</button>
                     </div>
-                </form>    
+                </form>
             </div>
-            
+
+        </dialog>
+
+        <dialog id="dialog-cancelar" class="dialog-cancelar">
+            <div class="container-dialog-cancelamento">
+                <form id="popup-form-cancelamento" class="popup-form-cancelamento">
+                    <input type="number" name="cdClienteCancelado" placeholder="Código Cliente" id="ativaedesativa">
+
+                    <div class="btns-dialog">
+                        <button class="btn-dialog" id="AtivarCliente">Ativar Cliente</button>
+                        <button class="btn-dialog" id="cancelarCliente">Cancelar Cliente</button>
+                        <button class="btn-dialog" id="exit">Cancelar</button>
+                    </div>
+                </form>
+            </div>
         </dialog>
 
         <section id="clientes">
@@ -92,9 +106,11 @@
         </div>
     </footer>
 
-   <script src="../js/getCliente.js"></script>
-   <script src="../js/putCliente.js"></script>
-   <script src="../js/viacep.js"></script>
+    <script src="../js/getCliente.js"></script>
+    <script src="../js/putCliente.js"></script>
+    <script src="../js/viacep.js"></script>
+    <script src="../js/cancelarCliente.js"></script>
 
 </body>
+
 </html>

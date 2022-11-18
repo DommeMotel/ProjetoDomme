@@ -1,5 +1,5 @@
 const btnAlt = document.querySelector("#btn-alterar-cliente");
-const popup = document.querySelector("dialog");
+const popup = document.querySelector("#dialog-put");
 const alterarCliente = document.querySelector("#btnAlt-dialog-cliente");
 const exitDialog = document.querySelector("#cancelar-dialog-cliente");
 const inputId = document.querySelector("#found-id");
@@ -82,7 +82,7 @@ function uptadeCliente(){
     const id = inputId.value;
     axios.put(`http://localhost:8000/clientes/${id}`, dados(formularioPopup))
     .then(response =>  {
-        alert(JSON.stringify(response.data));
+        alert("Alterado com sucesso");
         window.location.href = "clientes.html"
     })
     .catch(error => console.log(error));
