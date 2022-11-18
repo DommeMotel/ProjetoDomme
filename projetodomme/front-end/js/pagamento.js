@@ -7,10 +7,16 @@ formPagamento.suite.addEventListener("blur", async (e)=>{
     showInfos(await getDados(formPagamento))
 })
 
-formPagamento.saida.addEventListener("blur", (e) =>{
-    e.preventDefault();
-    
-});
+formPagamento.dano.addEventListener("blur", (e)=>{
+    const valorH = formPagamento.valorH.value;
+    const horas = formPagamento.horaTotal.value;
+    const consumo = formPagamento.consumo.value;
+    const dano = formPagamento.dano.value;
+
+    const total = (parseInt(valorH) * parseInt(horas)) + parseInt(consumo) + parseInt(dano)
+
+    formPagamento.total.value = `${total}`
+})
 
 async function getDados(form){
     const suite = form.suite.value;
@@ -30,14 +36,28 @@ async function getDados(form){
 function showInfos(infos){
     
     infos.forEach(info =>{
-        formPagamento.categoria.value = info.tpQuarto;
-        formPagamento.entrada.value = info.DataEntrada;
-        const end = new Date();
+        const saida = new Date();
+        let entrada = new Date(info.DataEntrada);
+        const diffInTime = new Date(saida - entrada);
+        const diffDias = Math.abs(saida.getTime() - entrada.getTime());
+        const tempoDia = 1000*60*60*24;
+        const dias = diffDias/tempoDia
 
-        let entrada = new Date(info.DataEntrada)
-        console.log(entrada)
+        formPagamento.periodo.value = info.periodo;
+        formPagamento.valorH.value = info.vlHora;
+        formPagamento.categoria.value = info.tpQuarto;
+        formPagamento.entrada.value = `${entrada.getDate()}/${entrada.getMonth()+1}/${entrada.getFullYear()} ${entrada.getHours()}:${entrada.getMinutes()}:${entrada.getSeconds()}`;;
+        formPagamento.saida.value = `${saida.getDate()}/${saida.getMonth()+1}/${saida.getFullYear()} ${saida.getHours()}:${saida.getMinutes()}:${saida.getSeconds()}`;
+        formPagamento.qtdpessoas.value = info.quantidadePessoas;
+        formPagamento.permanencia.value = `${dias.toFixed(0)}D ${diffInTime.getUTCHours()}H ${diffInTime.getUTCMinutes()}Min ${diffInTime.getUTCSeconds()}Sec`;
+
+        const horasTotais = (dias*24)
+        const horaAd = horasTotais - info.periodo;
+
+        formPagamento.horaAd.value = horaAd.toFixed(0);
+        formPagamento.horaTotal.value = horasTotais.toFixed(0);
         
     })
 }
 
-// formPagamento.saida.value = ` ${dataSaida.getDate()}/${dataSaida.getMonth()}/${dataSaida.getFullYear()} ${dataSaida.getHours()}:${dataSaida.getMinutes()}:${dataSaida.getSeconds()}`
+// formPagamento.saida.value = `${dataSaida.getDate()}/${dataSaida.getMonth()}/${dataSaida.getFullYear()} ${dataSaida.getHours()}:${dataSaida.getMinutes()}:${dataSaida.getSeconds()}`

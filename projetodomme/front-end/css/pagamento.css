@@ -119,7 +119,11 @@ label{
     width: 15%;
 }
 
-#input-permanencia, #input-consumo, #input-adiantamento{
+#input-permanencia{
+    width: 30%;
+}
+
+#input-consumo, #input-adiantamento{
     width: 20%;
 }
 
