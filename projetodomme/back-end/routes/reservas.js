@@ -53,8 +53,8 @@ router.get('/pagamento/:suite', (req, res) =>{
     const suite = req.params.suite;
     const cmd_sql = `SELECT
     a.codigo_reserva,
-    date_format(a.DataEntrada,'%d/%m/%y %T') as "DataEntrada",
-    date_format(a.DataSaida,'%d/%m/%y %T') as "DataSaida",
+    a.DataEntrada,
+    a.DataSaida,
     a.periodo,
     a.quantidadePessoas,
     a.vlHora,

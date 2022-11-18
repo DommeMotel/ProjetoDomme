@@ -1,6 +1,6 @@
 const btnAbrirPopup = document.querySelector("#btn-excluir-cliente");
 const popupCancelar = document.querySelector("#dialog-cancelar");
-const btCancelarCliente = document.querySelector("#cancelarQuarto");
+const btCancelarCliente = document.querySelector("#cancelarCliente");
 const btAtivarCliente = document.querySelector("#AtivarCliente");
 const inputAtivarCancelar = document.querySelector("#ativaedesativa");
 const closeDialog = document.querySelector("#exit")
