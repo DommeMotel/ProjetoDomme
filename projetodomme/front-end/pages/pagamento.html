@@ -37,11 +37,15 @@
                     <label>Suíte:</label>
                         <input type="text" name="suite" id="input-suite" placeholder="Suite" required > 
                     <label>Categoria:</label>
-                        <input type="text" name="categoria" id="input-categoria" placeholder="Categoria" required> 
+                        <input type="text" name="categoria" id="input-categoria" placeholder="Categoria" required>
+                    <label>Periodo contratado:</label>
+                        <input type="text" name="periodo" id="input-periodo" placeholder="Periodo" required readonly> 
+                    <label>Valor hora:</label>
+                        <input type="text" name="valorH" id="input-valorH" placeholder="Valor hora" required readonly> 
                     <label>Entrada:</label>
                         <input type="text" name="entrada" id="input-entrada" placeholder="Hora da Entrada" required> 
                     <label>Saída:</label>
-                        <input type="datetime-local" name="saida" id="input-saida" placeholder="Hora da Saída" required> 
+                        <input type="text" name="saida" id="input-saida" placeholder="Hora da Saída" required readonly> 
                     <label>Permanência:</label>
                         <input type="text" name="permanencia" id="input-permanencia" placeholder="Tempo de Permanência" required> 
                     <label>Qtde. de pessoas:</label>
@@ -54,6 +58,9 @@
                 <p>Consumo</p>
                 <hr>
                 <div class="form-pagamento">
+                    <label>Total de horas:</label>
+                    <input type="number" name="horaTotal" id="input-horaT" placeholder="Horas Totais" required readonly>
+
                     <label>Horas Adicionais:</label>
                     <input type="number" name="horaAd" id="input-horaAd" placeholder="Horas Adicionais" required> 
 
