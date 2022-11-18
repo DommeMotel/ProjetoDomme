@@ -106,19 +106,29 @@ router.post('/', (req, res) => {
 
 
 // método de alterar reservas
-router.put('/', (req, res) => {
-    res.status(200).send({
-        mensagem: 'Usando o Put da rota de reservas'
+router.put('/:id', (req, res) => {
+    let id = req.params.id;
+    let dados = req.body;
+    let dados_body = [ dados.DataSaida, dados.vlConsumo, dados.vlDano, dados.vlHoraAdicional, dados.vlTotal, dados.codigo_pagamento, dados.codigo_status, id]
+    const cmd_sql = `UPDATE tblreserva
+                        SET DataSaida = DATE_FORMAT(STR_TO_DATE(?, '%d/%m/%Y %T'), '%Y-%m-%d %T'), vlConsumo = ?, vlDano = ?, vlHoraAdicional = ?, vlTotal =?, codigo_pagamento = ?, codigo_status = ?
+                        WHERE codigo_reserva = ?`;
+    db.query(cmd_sql, dados_body, (err, rows) =>{
+        if(err){
+            res.status(400).send({
+                mensagem: err
+            });
+        } else {
+            res.status(200).send({
+                mensagem: 'Atualizado com sucesso',
+            });
+        };
     });
 });
 
 
 // método de deletar reservas
-router.delete('/', (req, res) => {
-    res.status(200).send({
-        mensagem: 'Usando o Delete da rota de reservas'
-    });
-});
+
 
 
 module.exports = router; 

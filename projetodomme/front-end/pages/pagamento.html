@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/pagamento.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Domme Motel - Pagamento</title>
 </head>
 
@@ -34,8 +35,8 @@
                 <p>Detalhes da Conta</p>
                 <hr>
                 <div class="form-pagamento">
-                    <label>Suíte:</label>
-                        <input type="text" name="suite" id="input-suite" placeholder="Suite" required > 
+                    <label>Código Reserva:</label>
+                        <input type="text" name="suite" id="input-suite" placeholder="Codigo Reserva" required > 
                     <label>Categoria:</label>
                         <input type="text" name="categoria" id="input-categoria" placeholder="Categoria" required>
                     <label>Periodo contratado:</label>
@@ -78,14 +79,17 @@
             <section id="pag" class="section-form">
                 <p>Pagamento:</p>
                 <hr>
-                <div id="pagamento">
+                <div id="pagamento" >
                     <label>Formas de Pagamento:</label>  <br>
-                        <input type="radio" name="pagamento" value="pix">PIX  <br>
-                        <input type="radio" name="pagamento" value="dinheiro">Dinheiro  <br>
-                        <input type="radio" name="pagamento" value="debito">Débito  <br>
-                        <input type="radio" name="pagamento" value="credito">Crédito  <br>
+                    <select name="tppagamento" id="pagamento" class="tppagamento">
+                        <option value="">Selecionar forma</option>
+                        <option value="1">PIX</option>
+                        <option value="2">Crédito</option>
+                        <option value="3">Débito</option>
+                        <option value="4">Dinheiro</option>
+                    </select>
                         <div>
-                            <button type="submit" class="btn-pag">Confirmar</button>
+                            <button type="submit" class="btn-pag">Finalizar reserva</button>
                             <button type="reset" class="btn-pag">Cancelar</button>
                         </div>
                 </div>

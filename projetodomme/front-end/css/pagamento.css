@@ -92,12 +92,14 @@ form{
     border: 1px black solid;
     text-align: center;
 }
+
+
 label{
     display: block;
     margin-top: 20px;
 }
 
-#pagamento>input{
+#pagamento>select{
     margin: 15px 10px 0px 10px;
     border: 1px #a8a8a8 solid;
 }
@@ -178,4 +180,12 @@ footer{
 .container-footer a{
     text-decoration: none;
     color: #fff;
+}
+
+
+.tppagamento{
+    width: 150px;
+    height: 25px;
+    border-radius: 10px;
+    text-align: center;
 }

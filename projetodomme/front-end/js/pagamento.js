@@ -1,5 +1,6 @@
 const formPagamento = document.querySelector("form");
 const btnPagamento = document.querySelector(".btn-pag");
+const inputReserva = document.querySelector("#input-suite");
 
 formPagamento.suite.addEventListener("blur", async (e)=>{
     e.preventDefault();
@@ -61,3 +62,49 @@ function showInfos(infos){
 }
 
 // formPagamento.saida.value = `${dataSaida.getDate()}/${dataSaida.getMonth()}/${dataSaida.getFullYear()} ${dataSaida.getHours()}:${dataSaida.getMinutes()}:${dataSaida.getSeconds()}`
+
+//Finalizando pagamento
+
+btnPagamento.addEventListener('click', (e)=>{
+    e.preventDefault();
+
+    console.log(coletarDados(formPagamento));
+    fechamentoReserva();
+})
+
+
+function coletarDados(form){
+    const DataSaida = form.saida.value;
+    const vlConsumo = form.consumo.value;
+    const vlDano = form.dano.value;
+    const vlHoraAdicional = form.horaAd.value;
+    const vlTotal = form.total.value;
+    const codigo_pagamento = form.tppagamento.value;
+
+    const fechamentoR = {
+        DataSaida: DataSaida,
+        vlConsumo: parseFloat(vlConsumo),   
+        vlDano: parseFloat(vlDano),
+        vlHoraAdicional: parseFloat(vlHoraAdicional),
+        vlTotal: parseFloat(vlTotal),
+        codigo_pagamento: parseInt(codigo_pagamento),
+        codigo_status: 6
+    }
+
+    return fechamentoR;
+}
+
+
+
+
+
+
+function fechamentoReserva(){
+    const id = inputReserva.value;
+    axios.put(`http://localhost:8000/reservas/${id}`, coletarDados(formPagamento))
+    .then(response =>  {
+        alert("Reserva finalizada com sucesso");
+        window.location.href = "reservas.html"
+    })
+    .catch(error => console.log(error));
+}
