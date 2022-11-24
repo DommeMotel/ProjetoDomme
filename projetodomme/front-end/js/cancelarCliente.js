@@ -27,7 +27,7 @@ btAtivarCliente.addEventListener('click', (e)=>{
 function CancelaCliente(){
     const id = inputAtivarCancelar.value;
     const statusCancelado = {
-        codigo_status: 9
+        codigo_status: 10
     }
     axios.put(`http://localhost:8000/clientes/cancelar/${id}`, statusCancelado)
     .then(response =>  {

@@ -43,7 +43,8 @@ function getDadosForm(form){
         rua: inputRua.value,
         numero: inputNr.value,
         cep: inputCep.value,
-        telefone: inputTelefone.value
+        telefone: inputTelefone.value,
+        codigo_status: 8
     };
 
     return cliente;

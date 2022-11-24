@@ -108,3 +108,16 @@ function fechamentoReserva(){
     })
     .catch(error => console.log(error));
 }
+
+
+function update(){
+    const id = selectQuarto.value;
+    const suite = {
+        codigo_status: 2
+    }
+    axios.put(`http://localhost:8000/suites/nome/${id}`, suite)
+    .then(response =>  {
+        window.location.href = "reservas.html"
+    })
+    .catch(error => console.log(error));
+}

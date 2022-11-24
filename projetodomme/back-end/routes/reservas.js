@@ -126,6 +126,23 @@ router.put('/:id', (req, res) => {
     });
 });
 
+router.put('/cancelar/:id', (req, res) => {
+    let dados = req.body;
+    let id = req.params.id;
+    let dados_body = [ dados.codigo_status, id]
+    const cmd_sql = 'UPDATE tblreserva SET codigo_status = ? WHERE codigo_reserva = ?';
+    db.query(cmd_sql, dados_body, (err, rows) =>{
+        if(err){
+            res.status(400).send({
+                mensagem: err
+            });
+        } else {
+            res.status(200).send({
+                mensagem: 'Atualizado com sucesso',
+            });
+        };
+    });
+});
 
 // método de deletar reservas
 
